@@ -1,0 +1,80 @@
+LifeView = {
+    ACTIONS = {
+	takeFloatSize:;
+	setLifeChar:;
+	showGrid:;
+    };
+    OUTLETS = {
+	popSizeField;
+	gridButton;
+	zoomField;
+	cursor;
+    };
+    SUPERCLASS = View;
+};
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+Generator = {
+    ACTIONS = {
+	startRandomTool:;
+	save:;
+	clear:;
+	loadSample:;
+	saveAs:;
+	showLegal:;
+	runStop:;
+	step:;
+	setSpeed:;
+	load:;
+	revertToSaved:;
+	showPrefs:;
+	showInfo:;
+    };
+    OUTLETS = {
+	prefController;
+	lifeView;
+	samplesMenu;
+	generationField;
+	infoGenerator;
+	runButton;
+	randomGenerator;
+	filenameField;
+	runMenuButton;
+    };
+    SUPERCLASS = Object;
+};
+InfoGenerator = {
+    OUTLETS = {
+	infoLifeView;
+	panel;
+	window;
+    };
+    SUPERCLASS = Generator;
+};
+InfoController = {
+    ACTIONS = {
+    };
+    OUTLETS = {
+	infoLifeView;
+	panel;
+	window;
+    };
+    SUPERCLASS = Object;
+};
+InfoLifeView = {
+    ACTIONS = {
+    };
+    OUTLETS = {
+	theBox;
+	authorText;
+	theAppButton;
+	window;
+	theTitle;
+	copyrightText;
+	versionText;
+    };
+    SUPERCLASS = LifeView;
+};

@@ -1,0 +1,126 @@
+/* 
+ * LifeChar.psw
+ * Wraps for xyshow to display a string of characters (PSWXYShow).
+ * A type-3 font definition for the lifeform symbol.
+ * Some wraps to bind lines for the grid.
+ *
+ * Copyright (c) 1993 Gil Rivlis
+ */
+
+
+/* xyshow takes a reference point , (X,Y), a string of characters,
+ * (charString), and an array of positions of those characters relative
+ * to each other. (the first character will be at (X,Y). It draws those
+ * charaters.
+ * The disadvantage is that the color is fixed for all of them.	
+ * It is very fast, though, to display many small chars.				
+ */
+
+defineps PSWXYShow(float X, Y; char *charString; 
+						float numstring XYCoords[j]; int j)
+	X Y moveto (charString) XYCoords xyshow
+endps
+
+
+/* A type 3 font definition with the shapes we want to draw.
+ * This is lifted from the purpl book.
+ */
+defineps PSWDefineFont(char *fontname; int size)
+	8 dict begin
+	/FontName /fontname def
+	/FontType 3 def
+	/FontMatrix[.001 0 0 .001 0 0] def
+	
+	/FontBBox[-500 -500 500 500] def
+	
+	/Encoding 256 array def
+	0 1 255 {Encoding exch /.notdef put} for
+	Encoding
+		dup (a) 0 get /Rectfill put
+		dup (b) 0 get /Rectstroke put
+		dup (c) 0 get /Circfill put
+		dup (d) 0 get /Circstroke put
+		dup (e) 0 get /Cross put
+		(f) 0 get /Times put
+		
+	/CharProcs 7 dict def
+	CharProcs begin
+		/.notdef {} def
+		/Rectfill {
+			-300 -300 moveto 0 600 rlineto
+			600 0 rlineto 0 -600 rlineto
+			closepath
+			fill
+		} bind def
+		/Rectstroke {
+			-299 -299 moveto 0 598 rlineto
+			598 0 rlineto 0 -598 rlineto
+			closepath
+			stroke
+		} bind def
+		/Circfill {
+			0 0 300 0 360 arc
+			closepath
+			fill
+		} bind def
+		/Circstroke {
+			0 0 299 0 360 arc
+			stroke
+		} bind def
+		/Cross {
+			-300 0 moveto 600 0 rlineto
+			0 300 moveto 0 -600 rlineto
+			stroke
+		} bind def
+		/Times {
+			-299 -299 moveto 598 598 rlineto
+			-299 299 moveto 598 -598 rlineto
+			stroke
+		} bind def
+	end
+	
+	/BuildGlyph {
+		1000 0
+		-500 -500 500 500
+		setcachedevice
+		exch /CharProcs get exch
+		2 copy known not {pop /.notdef} if
+		get exec
+	} bind def
+	
+	/BuildChar { 
+		1 index /Encoding get exch get
+		1 index /BuildGlyph get exch
+	} bind def
+	
+	currentdict
+	end
+	
+	/fontname exch definefont pop
+	
+	/fontname findfont size scalefont setfont
+	
+endps
+
+/* Some definitions for the next two wraps. */
+defineps PSWDefs()
+	/MLB { % X1 Y1 X Y
+		moveto
+		lineto
+	} bind def
+	/SLB { % lineColor LineWidth
+		setlinewidth
+		setgray
+		stroke
+	} bind def
+endps
+
+/* make line section bind */
+defineps PSWMakeLineBind(float x,y,x1,y1)
+	x1 y1 x y MLB
+endps
+
+/* stroke the lines (path) */
+defineps PSWStrokeLineBind(float LineWidth,LineColor)
+	LineColor LineWidth SLB
+endps

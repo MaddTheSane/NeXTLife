@@ -1,0 +1,29 @@
+
+Life (Version 1.0a)		November 1, 1993
+
+	This is my implementation of the Game of Life. There was a NS2.x Life
+program (By Peter Oleski, peter_oleski@hh.maus.de) on the archives but it
+didn't do all I wanted to do. Everything here is new except for the computation
+algorithm. 
+	
+	The program is free under the FSF lisence terms (Copyright to me).
+	
+	You should be able to find a binary only distribution: Life.10.tar.gz 
+and a source code distribution: Life.10.src.tar.gz.
+	
+	I may be reached at gil@atlatnic.mps.ohio-state.edu
+	
+------------------------------------------------------------------------------
+Installation:
+	From binary
+	-----------
+	Simply drag the extracted binary version to ~/Apps or /LocalApps. Logout
+and login to let Workspace Manager know about the new file type.
+	
+	From source
+	-----------
+	Open the source in Project Builder and change the default 'Install In' 
+directory in the Attributes view. (The current default is $(HOME)/Apps).
+	In the builder view, use the pop-up menu to choose install, and click
+build.
+------------------------------------------------------------------------------
