@@ -4,15 +4,15 @@
  * Copyright (c) 1993 Gil Rivlis
  */
 
-#import <appkit/appkit.h>
+#import <Cocoa/Cocoa.h>
 
 #import "Generator.h"
 
-@interface InfoGenerator:Generator
+@interface InfoGenerator: Generator
 {
-    id	infoLifeView;
-    id	panel;
-    id	window;
+    IBOutlet id	infoLifeView;
+    IBOutlet id	panel;
+    IBOutlet id	window;
 }
 
 - window;

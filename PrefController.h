@@ -3,27 +3,29 @@
  *
  * Copyright (c) 1993 Gil Rivlis 
  */
-#import <appkit/appkit.h>
+#import <Cocoa/Cocoa.h>
 
-@interface PrefController:Object
+@class Generator;
+
+@interface PrefController: NSObject
 {
-    id	universeHeightField;	
-    id	universeWidthField;
-	id	shapeMatrix;			//Life form shapes radio button matrix
-	id	window;					//See RandomGenerator...
-	id	theGenerator;			
-	id	sizeView;
-	id	shapeView;
-	id	multiView;
-	int	whichOne;				//which preference are we doing now?
+    IBOutlet NSTextField	*universeHeightField;
+    IBOutlet NSTextField	*universeWidthField;
+	IBOutlet NSMatrix		*shapeMatrix;			//Life form shapes radio button matrix
+	IBOutlet Generator		*theGenerator;
+	IBOutlet NSBox		*sizeView;
+	IBOutlet NSBox		*shapeView;
+	IBOutlet NSBox		*multiView;
+	NSInteger	whichOne;				//which preference are we doing now?
 }
 
-- awakeFromNib;
-- window;
-- setToView:theView;
-- setPrefView:sender;
+@property (readonly, weak) IBOutlet NSWindow *window;//See RandomGenerator...
 
-- save:sender;
-- useNow:sender;
+- (void)awakeFromNib;
+- (void)setToView:(NSView*)theView;
+- (IBAction)setPrefView:(id)sender;
+
+- (IBAction)save:(id)sender;
+- (IBAction)useNow:(id)sender;
 
 @end

@@ -4,25 +4,23 @@
  * Copyright (c) 1993 Gil Rivlis
  */
 
-#import <appkit/appkit.h>
+#import <Cocoa/Cocoa.h>
 
 #import "LifeView.h"
 
-@interface InfoLifeView:LifeView
+@interface InfoLifeView: LifeView
 {
-	id	versionText;		//Additional variables for the info view.
-	id	copyrightText;
-	id	authorText;
-	id	theAppButton;
-	id  theBox;
-	id	theTitle;
+	IBOutlet NSTextField	*versionText;		//Additional variables for the info view.
+	IBOutlet NSTextField	*copyrightText;
+	IBOutlet NSTextField	*authorText;
+	IBOutlet NSButton	*theAppButton;
+	IBOutlet NSBox		*theBox;
+	IBOutlet id	theTitle;
 }
 
 //new implementaions needed... and a new method 
-- initFrame:(NXRect *)frameRect;
-- drawSelf:(const NXRect *)rects :(int)rectCount;
-- mouseDown:(NXEvent *)theEvent;
-- window;
-- free;
+- (instancetype)initWithFrame:(NSRect)frameRect;
+//- drawSelf:(const NSRect *)rects :(int)rectCount;
+- (void)mouseDown:(NSEvent *)theEvent;
 
 @end

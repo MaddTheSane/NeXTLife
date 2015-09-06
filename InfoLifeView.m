@@ -10,32 +10,42 @@
 
 @implementation InfoLifeView
 
-- initFrame:(NXRect *)frameRect
+- (instancetype)initWithFrame:(NSRect)frameRect
 {
 	int i;
-	[super initFrame:frameRect];
-	if(population) free(population);
-	zoomSize = 1.5;		/* init zoom Size */
-	
-	universe.height = 60;
-	universe.width  = 60;
-	population = malloc(sizeof(char)*universe.height*universe.width);
-	for (i = 0; i<universe.width*universe.height; i++) {
-		population[i] = 0;
+	if (self = [super initWithFrame:frameRect]) {
+		if(population) free(population);
+		zoomSize = 1.5;		/* init zoom Size */
+		
+		universe.height = 60;
+		universe.width  = 60;
+		population = malloc(sizeof(char)*universe.height*universe.width);
+		for (i = 0; i<universe.width*universe.height; i++) {
+			population[i] = 0;
+		}
+		//[super initFrame:frameRect];
+		//self.size
+		/*
+		 [self sizeTo:(float)(FONT_SIZE*universe.width)
+		 :(float)(FONT_SIZE*universe.height) ];
+		 [self setDrawSize:(float)universe.width :(float)universe.height];
+		 [self setDrawOrigin:-0.5 :-0.5];
+		 [self setOpaque:NO];
+		 */
 	}
-	[super initFrame:frameRect];
-	[self sizeTo:(float)(FONT_SIZE*universe.width) 	
-							:(float)(FONT_SIZE*universe.height) ];
-	[self setDrawSize:(float)universe.width :(float)universe.height];
-	[self setDrawOrigin:-0.5 :-0.5];
-	[self setOpaque:NO];
-	return [self display];
+	return self;
+}
+
+- (BOOL)isOpaque
+{
+	return NO;
 }
 
 /* overwrite drawself. We don't need grid, and we want to draw in gray. 
  * Also we need to draw the text each time on top.
  */
-- drawSelf:(const NXRect *)rects :(int)rectCount
+//- drawSelf:(const NSRect *)rects :(int)rectCount
+- (void)drawRect:(NSRect)rects
 {
 	float	oldX = 0.0, oldY = 0.0;			/* Hold the last full one */
 	float 	*xyPositions;					/* pairs of positions...	  */
@@ -43,7 +53,7 @@
 	float	firstX = 0.0, firstY = 0.0;			/* hold the first for xyshow */
 	int		i, j;
 
-	PSWDefineFont("LifeFont",1.0);			/* Get the special font */ 	
+	//PSWDefineFont("LifeFont",1.0);			/* Get the special font */
 	
 	/* Allocate the correct memory size */
 	xyPositions = calloc( 2*popSize - 1, sizeof(float) );
@@ -78,14 +88,16 @@
 		}
 	}
 	/* Now we draw, at last */
- 	PSsetgray(NX_LTGRAY);	
-	NXRectFill(&bounds);			/* for the background */
-	PSsetgray(NX_DKGRAY);
+	[[NSColor lightGrayColor] set];
+ 	//PSsetgray(NX_LTGRAY);
+	NSRectFill(_bounds);			/* for the background */
+	[[NSColor darkGrayColor] set];
+	//PSsetgray(NX_DKGRAY);
 	PSWXYShow( firstX, firstY, charString, xyPositions, 2*popSize);
 	[popSizeField setIntValue:popSize];
 	/* free old stuff */
-	cfree(xyPositions);
-	cfree(charString);
+	free(xyPositions);
+	free(charString);
 	
 	/* Now for text drawing. We disable flush window, so that we can 
 	 * flush all at once. Otherwise it flickers a lot. 
@@ -96,27 +108,15 @@
 	[authorText display];
 	[theAppButton display];
 	[theBox display];
-	[theTitle display]; 
-	[[[self window] reenableFlushWindow] flushWindow];
-	return self;
+	[theTitle display];
+	[[self window] enableFlushWindow];
+	[[self window] flushWindow];
 }
 
 /* disable mouse down drawing */
-- mouseDown:(NXEvent *)theEvent
+- (void)mouseDown:(NSEvent *)theEvent
 {
-	return self;
-}
-
-- window
-{
-	return window;
-}
-
-- free
-{
-	free(population);
-	[super free];
-	return self;
+	//return self;
 }
 
 @end

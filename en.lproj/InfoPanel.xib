@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8187.4"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="Generator">
+            <connections>
+                <outlet property="infoGenerator" destination="3" id="22"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="3" userLabel="InfoGenerator" customClass="InfoGenerator">
+            <connections>
+                <outlet property="lifeView" destination="5" id="23"/>
+                <outlet property="panel" destination="8" id="20"/>
+                <outlet property="window" destination="11" id="21"/>
+            </connections>
+        </customObject>
+        <window title="License" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="8" userLabel="Panel" customClass="NSPanel">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="332" y="229" width="532" height="309"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <view key="contentView" id="13">
+                <rect key="frame" x="0.0" y="0.0" width="532" height="309"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="10">
+                        <rect key="frame" x="20" y="241" width="48" height="48"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="48" id="iWK-aI-xGx"/>
+                            <constraint firstAttribute="width" constant="48" id="jxI-66-XUH"/>
+                        </constraints>
+                        <buttonCell key="cell" type="bevel" title="Cell" image="life" imagePosition="only" alignment="center" enabled="NO" imageScaling="proportionallyDown" inset="2" id="35">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="cellTitle"/>
+                        </buttonCell>
+                    </button>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7">
+                        <rect key="frame" x="126" y="243" width="67" height="44"/>
+                        <textFieldCell key="cell" alignment="center" title="Life" id="34">
+                            <font key="font" size="36" name="Helvetica"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31">
+                        <rect key="frame" x="20" y="20" width="492" height="213"/>
+                        <clipView key="contentView" id="tCK-Yb-GUU">
+                            <rect key="frame" x="1" y="1" width="475" height="211"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textView importsGraphics="NO" baseWritingDirection="leftToRight" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="32">
+                                    <rect key="frame" x="0.0" y="-24" width="474" height="4376"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="475" height="211"/>
+                                    <size key="maxSize" width="492" height="10000000"/>
+                                    <attributedString key="textStorage">
+                                        <fragment>
+                                            <string key="content">Copyright (C) 1993 Gil Rivlis
+
+</string>
+                                            <attributes>
+                                                <font key="NSFont" size="12" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight">
+                                                    <tabStops/>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <string key="content">	This program is free software; you can redistribute it and/or modify it under the terms of Version 2, or any later version of your choice, of the GNU General Public License as published by the Free Software Foundation.
+
+	This program is distributed in the hope that it will be useful, but </string>
+                                            <attributes>
+                                                <font key="NSFont" size="12" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26"/>
+                                                        <textTab alignment="left" location="53"/>
+                                                        <textTab alignment="left" location="80"/>
+                                                        <textTab alignment="left" location="106"/>
+                                                        <textTab alignment="left" location="133"/>
+                                                        <textTab alignment="left" location="160"/>
+                                                        <textTab alignment="left" location="186"/>
+                                                        <textTab alignment="left" location="213"/>
+                                                        <textTab alignment="left" location="240"/>
+                                                        <textTab alignment="left" location="266"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="without any warranty">
+                                            <attributes>
+                                                <font key="NSFont" size="12" name="Helvetica-Oblique"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26"/>
+                                                        <textTab alignment="left" location="53"/>
+                                                        <textTab alignment="left" location="80"/>
+                                                        <textTab alignment="left" location="106"/>
+                                                        <textTab alignment="left" location="133"/>
+                                                        <textTab alignment="left" location="160"/>
+                                                        <textTab alignment="left" location="186"/>
+                                                        <textTab alignment="left" location="213"/>
+                                                        <textTab alignment="left" location="240"/>
+                                                        <textTab alignment="left" location="266"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="; without even the implied warranty of ">
+                                            <attributes>
+                                                <font key="NSFont" size="12" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26"/>
+                                                        <textTab alignment="left" location="53"/>
+                                                        <textTab alignment="left" location="80"/>
+                                                        <textTab alignment="left" location="106"/>
+                                                        <textTab alignment="left" location="133"/>
+                                                        <textTab alignment="left" location="160"/>
+                                                        <textTab alignment="left" location="186"/>
+                                                        <textTab alignment="left" location="213"/>
+                                                        <textTab alignment="left" location="240"/>
+                                                        <textTab alignment="left" location="266"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="merchantability">
+                                            <attributes>
+                                                <font key="NSFont" size="12" name="Helvetica-Oblique"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26"/>
+                                                        <textTab alignment="left" location="53"/>
+                                                        <textTab alignment="left" location="80"/>
+                                                        <textTab alignment="left" location="106"/>
+                                                        <textTab alignment="left" location="133"/>
+                                                        <textTab alignment="left" location="160"/>
+                                                        <textTab alignment="left" location="186"/>
+                                                        <textTab alignment="left" location="213"/>
+                                                        <textTab alignment="left" location="240"/>
+                                                        <textTab alignment="left" location="266"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=" or ">
+                                            <attributes>
+                                                <font key="NSFont" size="12" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26"/>
+                                                        <textTab alignment="left" location="53"/>
+                                                        <textTab alignment="left" location="80"/>
+                                                        <textTab alignment="left" location="106"/>
+                                                        <textTab alignment="left" location="133"/>
+                                                        <textTab alignment="left" location="160"/>
+                                                        <textTab alignment="left" location="186"/>
+                                                        <textTab alignment="left" location="213"/>
+                                                        <textTab alignment="left" location="240"/>
+                                                        <textTab alignment="left" location="266"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="fitness for a particular purpose">
+                                            <attributes>
+                                                <font key="NSFont" size="12" name="Helvetica-Oblique"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26"/>
+                                                        <textTab alignment="left" location="53"/>
+                                                        <textTab alignment="left" location="80"/>
+                                                        <textTab alignment="left" location="106"/>
+                                                        <textTab alignment="left" location="133"/>
+                                                        <textTab alignment="left" location="160"/>
+                                                        <textTab alignment="left" location="186"/>
+                                                        <textTab alignment="left" location="213"/>
+                                                        <textTab alignment="left" location="240"/>
+                                                        <textTab alignment="left" location="266"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <string key="content">.  See the GNU General Public License for more details.
+
+	A copy of the GNU General Public License follows.  You may also obtain a copy by writing to the Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+———————————————————————————————————
+
+</string>
+                                            <attributes>
+                                                <font key="NSFont" size="12" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26"/>
+                                                        <textTab alignment="left" location="53"/>
+                                                        <textTab alignment="left" location="80"/>
+                                                        <textTab alignment="left" location="106"/>
+                                                        <textTab alignment="left" location="133"/>
+                                                        <textTab alignment="left" location="160"/>
+                                                        <textTab alignment="left" location="186"/>
+                                                        <textTab alignment="left" location="213"/>
+                                                        <textTab alignment="left" location="240"/>
+                                                        <textTab alignment="left" location="266"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <mutableString key="content" base64-UTF8="YES">
+CgkJICAgIEdOVSBHRU5FUkFMIFBVQkxJQyBMSUNFTlNFCgkJICAgICAgIFZlcnNpb24gMiwgSnVuZSAx
+OTkxCgogQ29weXJpZ2h0IChDKSAxOTg5LCAxOTkxIEZyZWUgU29mdHdhcmUgRm91bmRhdGlvbiwgSW5j
+LgogICAgICAgICAgICAgICAgICAgICAgICAgIDY3NSBNYXNzIEF2ZSwgQ2FtYnJpZGdlLCBNQSAwMjEz
+OSwgVVNBCiBFdmVyeW9uZSBpcyBwZXJtaXR0ZWQgdG8gY29weSBhbmQgZGlzdHJpYnV0ZSB2ZXJiYXRp
+bSBjb3BpZXMKIG9mIHRoaXMgbGljZW5zZSBkb2N1bWVudCwgYnV0IGNoYW5naW5nIGl0IGlzIG5vdCBh
+bGxvd2VkLgoKCQkJICAgIFByZWFtYmxlCgogIFRoZSBsaWNlbnNlcyBmb3IgbW9zdCBzb2Z0d2FyZSBh
+cmUgZGVzaWduZWQgdG8gdGFrZSBhd2F5IHlvdXIKZnJlZWRvbSB0byBzaGFyZSBhbmQgY2hhbmdlIGl0
+LiAgQnkgY29udHJhc3QsIHRoZSBHTlUgR2VuZXJhbCBQdWJsaWMKTGljZW5zZSBpcyBpbnRlbmRlZCB0
+byBndWFyYW50ZWUgeW91ciBmcmVlZG9tIHRvIHNoYXJlIGFuZCBjaGFuZ2UgZnJlZQpzb2Z0d2FyZS0t
+dG8gbWFrZSBzdXJlIHRoZSBzb2Z0d2FyZSBpcyBmcmVlIGZvciBhbGwgaXRzIHVzZXJzLiAgVGhpcwpH
+ZW5lcmFsIFB1YmxpYyBMaWNlbnNlIGFwcGxpZXMgdG8gbW9zdCBvZiB0aGUgRnJlZSBTb2Z0d2FyZQpG
+b3VuZGF0aW9uJ3Mgc29mdHdhcmUgYW5kIHRvIGFueSBvdGhlciBwcm9ncmFtIHdob3NlIGF1dGhvcnMg
+Y29tbWl0IHRvCnVzaW5nIGl0LiAgKFNvbWUgb3RoZXIgRnJlZSBTb2Z0d2FyZSBGb3VuZGF0aW9uIHNv
+ZnR3YXJlIGlzIGNvdmVyZWQgYnkKdGhlIEdOVSBMaWJyYXJ5IEdlbmVyYWwgUHVibGljIExpY2Vuc2Ug
+aW5zdGVhZC4pICBZb3UgY2FuIGFwcGx5IGl0IHRvCnlvdXIgcHJvZ3JhbXMsIHRvby4KCiAgV2hlbiB3
+ZSBzcGVhayBvZiBmcmVlIHNvZnR3YXJlLCB3ZSBhcmUgcmVmZXJyaW5nIHRvIGZyZWVkb20sIG5vdApw
+cmljZS4gIE91ciBHZW5lcmFsIFB1YmxpYyBMaWNlbnNlcyBhcmUgZGVzaWduZWQgdG8gbWFrZSBzdXJl
+IHRoYXQgeW91CmhhdmUgdGhlIGZyZWVkb20gdG8gZGlzdHJpYnV0ZSBjb3BpZXMgb2YgZnJlZSBzb2Z0
+d2FyZSAoYW5kIGNoYXJnZSBmb3IKdGhpcyBzZXJ2aWNlIGlmIHlvdSB3aXNoKSwgdGhhdCB5b3UgcmVj
+ZWl2ZSBzb3VyY2UgY29kZSBvciBjYW4gZ2V0IGl0CmlmIHlvdSB3YW50IGl0LCB0aGF0IHlvdSBjYW4g
+Y2hhbmdlIHRoZSBzb2Z0d2FyZSBvciB1c2UgcGllY2VzIG9mIGl0CmluIG5ldyBmcmVlIHByb2dyYW1z
+OyBhbmQgdGhhdCB5b3Uga25vdyB5b3UgY2FuIGRvIHRoZXNlIHRoaW5ncy4KCiAgVG8gcHJvdGVjdCB5
+b3VyIHJpZ2h0cywgd2UgbmVlZCB0byBtYWtlIHJlc3RyaWN0aW9ucyB0aGF0IGZvcmJpZAphbnlvbmUg
+dG8gZGVueSB5b3UgdGhlc2UgcmlnaHRzIG9yIHRvIGFzayB5b3UgdG8gc3VycmVuZGVyIHRoZSByaWdo
+dHMuClRoZXNlIHJlc3RyaWN0aW9ucyB0cmFuc2xhdGUgdG8gY2VydGFpbiByZXNwb25zaWJpbGl0aWVz
+IGZvciB5b3UgaWYgeW91CmRpc3RyaWJ1dGUgY29waWVzIG9mIHRoZSBzb2Z0d2FyZSwgb3IgaWYgeW91
+IG1vZGlmeSBpdC4KCiAgRm9yIGV4YW1wbGUsIGlmIHlvdSBkaXN0cmlidXRlIGNvcGllcyBvZiBzdWNo
+IGEgcHJvZ3JhbSwgd2hldGhlcgpncmF0aXMgb3IgZm9yIGEgZmVlLCB5b3UgbXVzdCBnaXZlIHRoZSBy
+ZWNpcGllbnRzIGFsbCB0aGUgcmlnaHRzIHRoYXQKeW91IGhhdmUuICBZb3UgbXVzdCBtYWtlIHN1cmUg
+dGhhdCB0aGV5LCB0b28sIHJlY2VpdmUgb3IgY2FuIGdldCB0aGUKc291cmNlIGNvZGUuICBBbmQgeW91
+IG11c3Qgc2hvdyB0aGVtIHRoZXNlIHRlcm1zIHNvIHRoZXkga25vdyB0aGVpcgpyaWdodHMuCgogIFdl
+IHByb3RlY3QgeW91ciByaWdodHMgd2l0aCB0d28gc3RlcHM6ICgxKSBjb3B5cmlnaHQgdGhlIHNvZnR3
+YXJlLCBhbmQKKDIpIG9mZmVyIHlvdSB0aGlzIGxpY2Vuc2Ugd2hpY2ggZ2l2ZXMgeW91IGxlZ2FsIHBl
+cm1pc3Npb24gdG8gY29weSwKZGlzdHJpYnV0ZSBhbmQvb3IgbW9kaWZ5IHRoZSBzb2Z0d2FyZS4KCiAg
+QWxzbywgZm9yIGVhY2ggYXV0aG9yJ3MgcHJvdGVjdGlvbiBhbmQgb3Vycywgd2Ugd2FudCB0byBtYWtl
+IGNlcnRhaW4KdGhhdCBldmVyeW9uZSB1bmRlcnN0YW5kcyB0aGF0IHRoZXJlIGlzIG5vIHdhcnJhbnR5
+IGZvciB0aGlzIGZyZWUKc29mdHdhcmUuICBJZiB0aGUgc29mdHdhcmUgaXMgbW9kaWZpZWQgYnkgc29t
+ZW9uZSBlbHNlIGFuZCBwYXNzZWQgb24sIHdlCndhbnQgaXRzIHJlY2lwaWVudHMgdG8ga25vdyB0aGF0
+IHdoYXQgdGhleSBoYXZlIGlzIG5vdCB0aGUgb3JpZ2luYWwsIHNvCnRoYXQgYW55IHByb2JsZW1zIGlu
+dHJvZHVjZWQgYnkgb3RoZXJzIHdpbGwgbm90IHJlZmxlY3Qgb24gdGhlIG9yaWdpbmFsCmF1dGhvcnMn
+IHJlcHV0YXRpb25zLgoKICBGaW5hbGx5LCBhbnkgZnJlZSBwcm9ncmFtIGlzIHRocmVhdGVuZWQgY29u
+c3RhbnRseSBieSBzb2Z0d2FyZQpwYXRlbnRzLiAgV2Ugd2lzaCB0byBhdm9pZCB0aGUgZGFuZ2VyIHRo
+YXQgcmVkaXN0cmlidXRvcnMgb2YgYSBmcmVlCnByb2dyYW0gd2lsbCBpbmRpdmlkdWFsbHkgb2J0YWlu
+IHBhdGVudCBsaWNlbnNlcywgaW4gZWZmZWN0IG1ha2luZyB0aGUKcHJvZ3JhbSBwcm9wcmlldGFyeS4g
+IFRvIHByZXZlbnQgdGhpcywgd2UgaGF2ZSBtYWRlIGl0IGNsZWFyIHRoYXQgYW55CnBhdGVudCBtdXN0
+IGJlIGxpY2Vuc2VkIGZvciBldmVyeW9uZSdzIGZyZWUgdXNlIG9yIG5vdCBsaWNlbnNlZCBhdCBhbGwu
+CgogIFRoZSBwcmVjaXNlIHRlcm1zIGFuZCBjb25kaXRpb25zIGZvciBjb3B5aW5nLCBkaXN0cmlidXRp
+b24gYW5kCm1vZGlmaWNhdGlvbiBmb2xsb3cuCgwKCQkgICAgR05VIEdFTkVSQUwgUFVCTElDIExJQ0VO
+U0UKICAgVEVSTVMgQU5EIENPTkRJVElPTlMgRk9SIENPUFlJTkcsIERJU1RSSUJVVElPTiBBTkQgTU9E
+SUZJQ0FUSU9OCgogIDAuIFRoaXMgTGljZW5zZSBhcHBsaWVzIHRvIGFueSBwcm9ncmFtIG9yIG90aGVy
+IHdvcmsgd2hpY2ggY29udGFpbnMKYSBub3RpY2UgcGxhY2VkIGJ5IHRoZSBjb3B5cmlnaHQgaG9sZGVy
+IHNheWluZyBpdCBtYXkgYmUgZGlzdHJpYnV0ZWQKdW5kZXIgdGhlIHRlcm1zIG9mIHRoaXMgR2VuZXJh
+bCBQdWJsaWMgTGljZW5zZS4gIFRoZSAiUHJvZ3JhbSIsIGJlbG93LApyZWZlcnMgdG8gYW55IHN1Y2gg
+cHJvZ3JhbSBvciB3b3JrLCBhbmQgYSAid29yayBiYXNlZCBvbiB0aGUgUHJvZ3JhbSIKbWVhbnMgZWl0
+aGVyIHRoZSBQcm9ncmFtIG9yIGFueSBkZXJpdmF0aXZlIHdvcmsgdW5kZXIgY29weXJpZ2h0IGxhdzoK
+dGhhdCBpcyB0byBzYXksIGEgd29yayBjb250YWluaW5nIHRoZSBQcm9ncmFtIG9yIGEgcG9ydGlvbiBv
+ZiBpdCwKZWl0aGVyIHZlcmJhdGltIG9yIHdpdGggbW9kaWZpY2F0aW9ucyBhbmQvb3IgdHJhbnNsYXRl
+ZCBpbnRvIGFub3RoZXIKbGFuZ3VhZ2UuICAoSGVyZWluYWZ0ZXIsIHRyYW5zbGF0aW9uIGlzIGluY2x1
+ZGVkIHdpdGhvdXQgbGltaXRhdGlvbiBpbgp0aGUgdGVybSAibW9kaWZpY2F0aW9uIi4pICBFYWNoIGxp
+Y2Vuc2VlIGlzIGFkZHJlc3NlZCBhcyAieW91Ii4KCkFjdGl2aXRpZXMgb3RoZXIgdGhhbiBjb3B5aW5n
+LCBkaXN0cmlidXRpb24gYW5kIG1vZGlmaWNhdGlvbiBhcmUgbm90CmNvdmVyZWQgYnkgdGhpcyBMaWNl
+bnNlOyB0aGV5IGFyZSBvdXRzaWRlIGl0cyBzY29wZS4gIFRoZSBhY3Qgb2YKcnVubmluZyB0aGUgUHJv
+Z3JhbSBpcyBub3QgcmVzdHJpY3RlZCwgYW5kIHRoZSBvdXRwdXQgZnJvbSB0aGUgUHJvZ3JhbQppcyBj
+b3ZlcmVkIG9ubHkgaWYgaXRzIGNvbnRlbnRzIGNvbnN0aXR1dGUgYSB3b3JrIGJhc2VkIG9uIHRoZQpQ
+cm9ncmFtIChpbmRlcGVuZGVudCBvZiBoYXZpbmcgYmVlbiBtYWRlIGJ5IHJ1bm5pbmcgdGhlIFByb2dy
+YW0pLgpXaGV0aGVyIHRoYXQgaXMgdHJ1ZSBkZXBlbmRzIG9uIHdoYXQgdGhlIFByb2dyYW0gZG9lcy4K
+CiAgMS4gWW91IG1heSBjb3B5IGFuZCBkaXN0cmlidXRlIHZlcmJhdGltIGNvcGllcyBvZiB0aGUgUHJv
+Z3JhbSdzCnNvdXJjZSBjb2RlIGFzIHlvdSByZWNlaXZlIGl0LCBpbiBhbnkgbWVkaXVtLCBwcm92aWRl
+ZCB0aGF0IHlvdQpjb25zcGljdW91c2x5IGFuZCBhcHByb3ByaWF0ZWx5IHB1Ymxpc2ggb24gZWFjaCBj
+b3B5IGFuIGFwcHJvcHJpYXRlCmNvcHlyaWdodCBub3RpY2UgYW5kIGRpc2NsYWltZXIgb2Ygd2FycmFu
+dHk7IGtlZXAgaW50YWN0IGFsbCB0aGUKbm90aWNlcyB0aGF0IHJlZmVyIHRvIHRoaXMgTGljZW5zZSBh
+bmQgdG8gdGhlIGFic2VuY2Ugb2YgYW55IHdhcnJhbnR5OwphbmQgZ2l2ZSBhbnkgb3RoZXIgcmVjaXBp
+ZW50cyBvZiB0aGUgUHJvZ3JhbSBhIGNvcHkgb2YgdGhpcyBMaWNlbnNlCmFsb25nIHdpdGggdGhlIFBy
+b2dyYW0uCgpZb3UgbWF5IGNoYXJnZSBhIGZlZSBmb3IgdGhlIHBoeXNpY2FsIGFjdCBvZiB0cmFuc2Zl
+cnJpbmcgYSBjb3B5LCBhbmQKeW91IG1heSBhdCB5b3VyIG9wdGlvbiBvZmZlciB3YXJyYW50eSBwcm90
+ZWN0aW9uIGluIGV4Y2hhbmdlIGZvciBhIGZlZS4KCiAgMi4gWW91IG1heSBtb2RpZnkgeW91ciBjb3B5
+IG9yIGNvcGllcyBvZiB0aGUgUHJvZ3JhbSBvciBhbnkgcG9ydGlvbgpvZiBpdCwgdGh1cyBmb3JtaW5n
+IGEgd29yayBiYXNlZCBvbiB0aGUgUHJvZ3JhbSwgYW5kIGNvcHkgYW5kCmRpc3RyaWJ1dGUgc3VjaCBt
+b2RpZmljYXRpb25zIG9yIHdvcmsgdW5kZXIgdGhlIHRlcm1zIG9mIFNlY3Rpb24gMQphYm92ZSwgcHJv
+dmlkZWQgdGhhdCB5b3UgYWxzbyBtZWV0IGFsbCBvZiB0aGVzZSBjb25kaXRpb25zOgoKICAgIGEpIFlv
+dSBtdXN0IGNhdXNlIHRoZSBtb2RpZmllZCBmaWxlcyB0byBjYXJyeSBwcm9taW5lbnQgbm90aWNlcwog
+ICAgc3RhdGluZyB0aGF0IHlvdSBjaGFuZ2VkIHRoZSBmaWxlcyBhbmQgdGhlIGRhdGUgb2YgYW55IGNo
+YW5nZS4KCiAgICBiKSBZb3UgbXVzdCBjYXVzZSBhbnkgd29yayB0aGF0IHlvdSBkaXN0cmlidXRlIG9y
+IHB1Ymxpc2gsIHRoYXQgaW4KICAgIHdob2xlIG9yIGluIHBhcnQgY29udGFpbnMgb3IgaXMgZGVyaXZl
+ZCBmcm9tIHRoZSBQcm9ncmFtIG9yIGFueQogICAgcGFydCB0aGVyZW9mLCB0byBiZSBsaWNlbnNlZCBh
+cyBhIHdob2xlIGF0IG5vIGNoYXJnZSB0byBhbGwgdGhpcmQKICAgIHBhcnRpZXMgdW5kZXIgdGhlIHRl
+cm1zIG9mIHRoaXMgTGljZW5zZS4KCiAgICBjKSBJZiB0aGUgbW9kaWZpZWQgcHJvZ3JhbSBub3JtYWxs
+eSByZWFkcyBjb21tYW5kcyBpbnRlcmFjdGl2ZWx5CiAgICB3aGVuIHJ1biwgeW91IG11c3QgY2F1c2Ug
+aXQsIHdoZW4gc3RhcnRlZCBydW5uaW5nIGZvciBzdWNoCiAgICBpbnRlcmFjdGl2ZSB1c2UgaW4gdGhl
+IG1vc3Qgb3JkaW5hcnkgd2F5LCB0byBwcmludCBvciBkaXNwbGF5IGFuCiAgICBhbm5vdW5jZW1lbnQg
+aW5jbHVkaW5nIGFuIGFwcHJvcHJpYXRlIGNvcHlyaWdodCBub3RpY2UgYW5kIGEKICAgIG5vdGljZSB0
+aGF0IHRoZXJlIGlzIG5vIHdhcnJhbnR5IChvciBlbHNlLCBzYXlpbmcgdGhhdCB5b3UgcHJvdmlkZQog
+ICAgYSB3YXJyYW50eSkgYW5kIHRoYXQgdXNlcnMgbWF5IHJlZGlzdHJpYnV0ZSB0aGUgcHJvZ3JhbSB1
+bmRlcgogICAgdGhlc2UgY29uZGl0aW9ucywgYW5kIHRlbGxpbmcgdGhlIHVzZXIgaG93IHRvIHZpZXcg
+YSBjb3B5IG9mIHRoaXMKICAgIExpY2Vuc2UuICAoRXhjZXB0aW9uOiBpZiB0aGUgUHJvZ3JhbSBpdHNl
+bGYgaXMgaW50ZXJhY3RpdmUgYnV0CiAgICBkb2VzIG5vdCBub3JtYWxseSBwcmludCBzdWNoIGFuIGFu
+bm91bmNlbWVudCwgeW91ciB3b3JrIGJhc2VkIG9uCiAgICB0aGUgUHJvZ3JhbSBpcyBub3QgcmVxdWly
+ZWQgdG8gcHJpbnQgYW4gYW5ub3VuY2VtZW50LikKDApUaGVzZSByZXF1aXJlbWVudHMgYXBwbHkgdG8g
+dGhlIG1vZGlmaWVkIHdvcmsgYXMgYSB3aG9sZS4gIElmCmlkZW50aWZpYWJsZSBzZWN0aW9ucyBvZiB0
+aGF0IHdvcmsgYXJlIG5vdCBkZXJpdmVkIGZyb20gdGhlIFByb2dyYW0sCmFuZCBjYW4gYmUgcmVhc29u
+YWJseSBjb25zaWRlcmVkIGluZGVwZW5kZW50IGFuZCBzZXBhcmF0ZSB3b3JrcyBpbgp0aGVtc2VsdmVz
+LCB0aGVuIHRoaXMgTGljZW5zZSwgYW5kIGl0cyB0ZXJtcywgZG8gbm90IGFwcGx5IHRvIHRob3NlCnNl
+Y3Rpb25zIHdoZW4geW91IGRpc3RyaWJ1dGUgdGhlbSBhcyBzZXBhcmF0ZSB3b3Jrcy4gIEJ1dCB3aGVu
+IHlvdQpkaXN0cmlidXRlIHRoZSBzYW1lIHNlY3Rpb25zIGFzIHBhcnQgb2YgYSB3aG9sZSB3aGljaCBp
+cyBhIHdvcmsgYmFzZWQKb24gdGhlIFByb2dyYW0sIHRoZSBkaXN0cmlidXRpb24gb2YgdGhlIHdob2xl
+IG11c3QgYmUgb24gdGhlIHRlcm1zIG9mCnRoaXMgTGljZW5zZSwgd2hvc2UgcGVybWlzc2lvbnMgZm9y
+IG90aGVyIGxpY2Vuc2VlcyBleHRlbmQgdG8gdGhlCmVudGlyZSB3aG9sZSwgYW5kIHRodXMgdG8gZWFj
+aCBhbmQgZXZlcnkgcGFydCByZWdhcmRsZXNzIG9mIHdobyB3cm90ZSBpdC4KClRodXMsIGl0IGlzIG5v
+dCB0aGUgaW50ZW50IG9mIHRoaXMgc2VjdGlvbiB0byBjbGFpbSByaWdodHMgb3IgY29udGVzdAp5b3Vy
+IHJpZ2h0cyB0byB3b3JrIHdyaXR0ZW4gZW50aXJlbHkgYnkgeW91OyByYXRoZXIsIHRoZSBpbnRlbnQg
+aXMgdG8KZXhlcmNpc2UgdGhlIHJpZ2h0IHRvIGNvbnRyb2wgdGhlIGRpc3RyaWJ1dGlvbiBvZiBkZXJp
+dmF0aXZlIG9yCmNvbGxlY3RpdmUgd29ya3MgYmFzZWQgb24gdGhlIFByb2dyYW0uCgpJbiBhZGRpdGlv
+biwgbWVyZSBhZ2dyZWdhdGlvbiBvZiBhbm90aGVyIHdvcmsgbm90IGJhc2VkIG9uIHRoZSBQcm9ncmFt
+CndpdGggdGhlIFByb2dyYW0gKG9yIHdpdGggYSB3b3JrIGJhc2VkIG9uIHRoZSBQcm9ncmFtKSBvbiBh
+IHZvbHVtZSBvZgphIHN0b3JhZ2Ugb3IgZGlzdHJpYnV0aW9uIG1lZGl1bSBkb2VzIG5vdCBicmluZyB0
+aGUgb3RoZXIgd29yayB1bmRlcgp0aGUgc2NvcGUgb2YgdGhpcyBMaWNlbnNlLgoKICAzLiBZb3UgbWF5
+IGNvcHkgYW5kIGRpc3RyaWJ1dGUgdGhlIFByb2dyYW0gKG9yIGEgd29yayBiYXNlZCBvbiBpdCwKdW5k
+ZXIgU2VjdGlvbiAyKSBpbiBvYmplY3QgY29kZSBvciBleGVjdXRhYmxlIGZvcm0gdW5kZXIgdGhlIHRl
+cm1zIG9mClNlY3Rpb25zIDEgYW5kIDIgYWJvdmUgcHJvdmlkZWQgdGhhdCB5b3UgYWxzbyBkbyBvbmUg
+b2YgdGhlIGZvbGxvd2luZzoKCiAgICBhKSBBY2NvbXBhbnkgaXQgd2l0aCB0aGUgY29tcGxldGUgY29y
+cmVzcG9uZGluZyBtYWNoaW5lLXJlYWRhYmxlCiAgICBzb3VyY2UgY29kZSwgd2hpY2ggbXVzdCBiZSBk
+aXN0cmlidXRlZCB1bmRlciB0aGUgdGVybXMgb2YgU2VjdGlvbnMKICAgIDEgYW5kIDIgYWJvdmUgb24g
+YSBtZWRpdW0gY3VzdG9tYXJpbHkgdXNlZCBmb3Igc29mdHdhcmUgaW50ZXJjaGFuZ2U7IG9yLAoKICAg
+IGIpIEFjY29tcGFueSBpdCB3aXRoIGEgd3JpdHRlbiBvZmZlciwgdmFsaWQgZm9yIGF0IGxlYXN0IHRo
+cmVlCiAgICB5ZWFycywgdG8gZ2l2ZSBhbnkgdGhpcmQgcGFydHksIGZvciBhIGNoYXJnZSBubyBtb3Jl
+IHRoYW4geW91cgogICAgY29zdCBvZiBwaHlzaWNhbGx5IHBlcmZvcm1pbmcgc291cmNlIGRpc3RyaWJ1
+dGlvbiwgYSBjb21wbGV0ZQogICAgbWFjaGluZS1yZWFkYWJsZSBjb3B5IG9mIHRoZSBjb3JyZXNwb25k
+aW5nIHNvdXJjZSBjb2RlLCB0byBiZQogICAgZGlzdHJpYnV0ZWQgdW5kZXIgdGhlIHRlcm1zIG9mIFNl
+Y3Rpb25zIDEgYW5kIDIgYWJvdmUgb24gYSBtZWRpdW0KICAgIGN1c3RvbWFyaWx5IHVzZWQgZm9yIHNv
+ZnR3YXJlIGludGVyY2hhbmdlOyBvciwKCiAgICBjKSBBY2NvbXBhbnkgaXQgd2l0aCB0aGUgaW5mb3Jt
+YXRpb24geW91IHJlY2VpdmVkIGFzIHRvIHRoZSBvZmZlcgogICAgdG8gZGlzdHJpYnV0ZSBjb3JyZXNw
+b25kaW5nIHNvdXJjZSBjb2RlLiAgKFRoaXMgYWx0ZXJuYXRpdmUgaXMKICAgIGFsbG93ZWQgb25seSBm
+b3Igbm9uY29tbWVyY2lhbCBkaXN0cmlidXRpb24gYW5kIG9ubHkgaWYgeW91CiAgICByZWNlaXZlZCB0
+aGUgcHJvZ3JhbSBpbiBvYmplY3QgY29kZSBvciBleGVjdXRhYmxlIGZvcm0gd2l0aCBzdWNoCiAgICBh
+biBvZmZlciwgaW4gYWNjb3JkIHdpdGggU3Vic2VjdGlvbiBiIGFib3ZlLikKClRoZSBzb3VyY2UgY29k
+ZSBmb3IgYSB3b3JrIG1lYW5zIHRoZSBwcmVmZXJyZWQgZm9ybSBvZiB0aGUgd29yayBmb3IKbWFraW5n
+IG1vZGlmaWNhdGlvbnMgdG8gaXQuICBGb3IgYW4gZXhlY3V0YWJsZSB3b3JrLCBjb21wbGV0ZSBzb3Vy
+Y2UKY29kZSBtZWFucyBhbGwgdGhlIHNvdXJjZSBjb2RlIGZvciBhbGwgbW9kdWxlcyBpdCBjb250YWlu
+cywgcGx1cyBhbnkKYXNzb2NpYXRlZCBpbnRlcmZhY2UgZGVmaW5pdGlvbiBmaWxlcywgcGx1cyB0aGUg
+c2NyaXB0cyB1c2VkIHRvCmNvbnRyb2wgY29tcGlsYXRpb24gYW5kIGluc3RhbGxhdGlvbiBvZiB0aGUg
+ZXhlY3V0YWJsZS4gIEhvd2V2ZXIsIGFzIGEKc3BlY2lhbCBleGNlcHRpb24sIHRoZSBzb3VyY2UgY29k
+ZSBkaXN0cmlidXRlZCBuZWVkIG5vdCBpbmNsdWRlCmFueXRoaW5nIHRoYXQgaXMgbm9ybWFsbHkgZGlz
+dHJpYnV0ZWQgKGluIGVpdGhlciBzb3VyY2Ugb3IgYmluYXJ5CmZvcm0pIHdpdGggdGhlIG1ham9yIGNv
+bXBvbmVudHMgKGNvbXBpbGVyLCBrZXJuZWwsIGFuZCBzbyBvbikgb2YgdGhlCm9wZXJhdGluZyBzeXN0
+ZW0gb24gd2hpY2ggdGhlIGV4ZWN1dGFibGUgcnVucywgdW5sZXNzIHRoYXQgY29tcG9uZW50Cml0c2Vs
+ZiBhY2NvbXBhbmllcyB0aGUgZXhlY3V0YWJsZS4KCklmIGRpc3RyaWJ1dGlvbiBvZiBleGVjdXRhYmxl
+IG9yIG9iamVjdCBjb2RlIGlzIG1hZGUgYnkgb2ZmZXJpbmcKYWNjZXNzIHRvIGNvcHkgZnJvbSBhIGRl
+c2lnbmF0ZWQgcGxhY2UsIHRoZW4gb2ZmZXJpbmcgZXF1aXZhbGVudAphY2Nlc3MgdG8gY29weSB0aGUg
+c291cmNlIGNvZGUgZnJvbSB0aGUgc2FtZSBwbGFjZSBjb3VudHMgYXMKZGlzdHJpYnV0aW9uIG9mIHRo
+ZSBzb3VyY2UgY29kZSwgZXZlbiB0aG91Z2ggdGhpcmQgcGFydGllcyBhcmUgbm90CmNvbXBlbGxlZCB0
+byBjb3B5IHRoZSBzb3VyY2UgYWxvbmcgd2l0aCB0aGUgb2JqZWN0IGNvZGUuCgwKICA0LiBZb3UgbWF5
+IG5vdCBjb3B5LCBtb2RpZnksIHN1YmxpY2Vuc2UsIG9yIGRpc3RyaWJ1dGUgdGhlIFByb2dyYW0KZXhj
+ZXB0IGFzIGV4cHJlc3NseSBwcm92aWRlZCB1bmRlciB0aGlzIExpY2Vuc2UuICBBbnkgYXR0ZW1wdApv
+dGhlcndpc2UgdG8gY29weSwgbW9kaWZ5LCBzdWJsaWNlbnNlIG9yIGRpc3RyaWJ1dGUgdGhlIFByb2dy
+YW0gaXMKdm9pZCwgYW5kIHdpbGwgYXV0b21hdGljYWxseSB0ZXJtaW5hdGUgeW91ciByaWdodHMgdW5k
+ZXIgdGhpcyBMaWNlbnNlLgpIb3dldmVyLCBwYXJ0aWVzIHdobyBoYXZlIHJlY2VpdmVkIGNvcGllcywg
+b3IgcmlnaHRzLCBmcm9tIHlvdSB1bmRlcgp0aGlzIExpY2Vuc2Ugd2lsbCBub3QgaGF2ZSB0aGVpciBs
+aWNlbnNlcyB0ZXJtaW5hdGVkIHNvIGxvbmcgYXMgc3VjaApwYXJ0aWVzIHJlbWFpbiBpbiBmdWxsIGNv
+bXBsaWFuY2UuCgogIDUuIFlvdSBhcmUgbm90IHJlcXVpcmVkIHRvIGFjY2VwdCB0aGlzIExpY2Vuc2Us
+IHNpbmNlIHlvdSBoYXZlIG5vdApzaWduZWQgaXQuICBIb3dldmVyLCBub3RoaW5nIGVsc2UgZ3JhbnRz
+IHlvdSBwZXJtaXNzaW9uIHRvIG1vZGlmeSBvcgpkaXN0cmlidXRlIHRoZSBQcm9ncmFtIG9yIGl0cyBk
+ZXJpdmF0aXZlIHdvcmtzLiAgVGhlc2UgYWN0aW9ucyBhcmUKcHJvaGliaXRlZCBieSBsYXcgaWYgeW91
+IGRvIG5vdCBhY2NlcHQgdGhpcyBMaWNlbnNlLiAgVGhlcmVmb3JlLCBieQptb2RpZnlpbmcgb3IgZGlz
+dHJpYnV0aW5nIHRoZSBQcm9ncmFtIChvciBhbnkgd29yayBiYXNlZCBvbiB0aGUKUHJvZ3JhbSksIHlv
+dSBpbmRpY2F0ZSB5b3VyIGFjY2VwdGFuY2Ugb2YgdGhpcyBMaWNlbnNlIHRvIGRvIHNvLCBhbmQKYWxs
+IGl0cyB0ZXJtcyBhbmQgY29uZGl0aW9ucyBmb3IgY29weWluZywgZGlzdHJpYnV0aW5nIG9yIG1vZGlm
+eWluZwp0aGUgUHJvZ3JhbSBvciB3b3JrcyBiYXNlZCBvbiBpdC4KCiAgNi4gRWFjaCB0aW1lIHlvdSBy
+ZWRpc3RyaWJ1dGUgdGhlIFByb2dyYW0gKG9yIGFueSB3b3JrIGJhc2VkIG9uIHRoZQpQcm9ncmFtKSwg
+dGhlIHJlY2lwaWVudCBhdXRvbWF0aWNhbGx5IHJlY2VpdmVzIGEgbGljZW5zZSBmcm9tIHRoZQpvcmln
+aW5hbCBsaWNlbnNvciB0byBjb3B5LCBkaXN0cmlidXRlIG9yIG1vZGlmeSB0aGUgUHJvZ3JhbSBzdWJq
+ZWN0IHRvCnRoZXNlIHRlcm1zIGFuZCBjb25kaXRpb25zLiAgWW91IG1heSBub3QgaW1wb3NlIGFueSBm
+dXJ0aGVyCnJlc3RyaWN0aW9ucyBvbiB0aGUgcmVjaXBpZW50cycgZXhlcmNpc2Ugb2YgdGhlIHJpZ2h0
+cyBncmFudGVkIGhlcmVpbi4KWW91IGFyZSBub3QgcmVzcG9uc2libGUgZm9yIGVuZm9yY2luZyBjb21w
+bGlhbmNlIGJ5IHRoaXJkIHBhcnRpZXMgdG8KdGhpcyBMaWNlbnNlLgoKICA3LiBJZiwgYXMgYSBjb25z
+ZXF1ZW5jZSBvZiBhIGNvdXJ0IGp1ZGdtZW50IG9yIGFsbGVnYXRpb24gb2YgcGF0ZW50CmluZnJpbmdl
+bWVudCBvciBmb3IgYW55IG90aGVyIHJlYXNvbiAobm90IGxpbWl0ZWQgdG8gcGF0ZW50IGlzc3Vlcyks
+CmNvbmRpdGlvbnMgYXJlIGltcG9zZWQgb24geW91ICh3aGV0aGVyIGJ5IGNvdXJ0IG9yZGVyLCBhZ3Jl
+ZW1lbnQgb3IKb3RoZXJ3aXNlKSB0aGF0IGNvbnRyYWRpY3QgdGhlIGNvbmRpdGlvbnMgb2YgdGhpcyBM
+aWNlbnNlLCB0aGV5IGRvIG5vdApleGN1c2UgeW91IGZyb20gdGhlIGNvbmRpdGlvbnMgb2YgdGhpcyBM
+aWNlbnNlLiAgSWYgeW91IGNhbm5vdApkaXN0cmlidXRlIHNvIGFzIHRvIHNhdGlzZnkgc2ltdWx0YW5l
+b3VzbHkgeW91ciBvYmxpZ2F0aW9ucyB1bmRlciB0aGlzCkxpY2Vuc2UgYW5kIGFueSBvdGhlciBwZXJ0
+aW5lbnQgb2JsaWdhdGlvbnMsIHRoZW4gYXMgYSBjb25zZXF1ZW5jZSB5b3UKbWF5IG5vdCBkaXN0cmli
+dXRlIHRoZSBQcm9ncmFtIGF0IGFsbC4gIEZvciBleGFtcGxlLCBpZiBhIHBhdGVudApsaWNlbnNlIHdv
+dWxkIG5vdCBwZXJtaXQgcm95YWx0eS1mcmVlIHJlZGlzdHJpYnV0aW9uIG9mIHRoZSBQcm9ncmFtIGJ5
+CmFsbCB0aG9zZSB3aG8gcmVjZWl2ZSBjb3BpZXMgZGlyZWN0bHkgb3IgaW5kaXJlY3RseSB0aHJvdWdo
+IHlvdSwgdGhlbgp0aGUgb25seSB3YXkgeW91IGNvdWxkIHNhdGlzZnkgYm90aCBpdCBhbmQgdGhpcyBM
+aWNlbnNlIHdvdWxkIGJlIHRvCnJlZnJhaW4gZW50aXJlbHkgZnJvbSBkaXN0cmlidXRpb24gb2YgdGhl
+IFByb2dyYW0uCgpJZiBhbnkgcG9ydGlvbiBvZiB0aGlzIHNlY3Rpb24gaXMgaGVsZCBpbnZhbGlkIG9y
+IHVuZW5mb3JjZWFibGUgdW5kZXIKYW55IHBhcnRpY3VsYXIgY2lyY3Vtc3RhbmNlLCB0aGUgYmFsYW5j
+ZSBvZiB0aGUgc2VjdGlvbiBpcyBpbnRlbmRlZCB0bwphcHBseSBhbmQgdGhlIHNlY3Rpb24gYXMgYSB3
+aG9sZSBpcyBpbnRlbmRlZCB0byBhcHBseSBpbiBvdGhlcgpjaXJjdW1zdGFuY2VzLgoKSXQgaXMgbm90
+IHRoZSBwdXJwb3NlIG9mIHRoaXMgc2VjdGlvbiB0byBpbmR1Y2UgeW91IHRvIGluZnJpbmdlIGFueQpw
+YXRlbnRzIG9yIG90aGVyIHByb3BlcnR5IHJpZ2h0IGNsYWltcyBvciB0byBjb250ZXN0IHZhbGlkaXR5
+IG9mIGFueQpzdWNoIGNsYWltczsgdGhpcyBzZWN0aW9uIGhhcyB0aGUgc29sZSBwdXJwb3NlIG9mIHBy
+b3RlY3RpbmcgdGhlCmludGVncml0eSBvZiB0aGUgZnJlZSBzb2Z0d2FyZSBkaXN0cmlidXRpb24gc3lz
+dGVtLCB3aGljaCBpcwppbXBsZW1lbnRlZCBieSBwdWJsaWMgbGljZW5zZSBwcmFjdGljZXMuICBNYW55
+IHBlb3BsZSBoYXZlIG1hZGUKZ2VuZXJvdXMgY29udHJpYnV0aW9ucyB0byB0aGUgd2lkZSByYW5nZSBv
+ZiBzb2Z0d2FyZSBkaXN0cmlidXRlZAp0aHJvdWdoIHRoYXQgc3lzdGVtIGluIHJlbGlhbmNlIG9uIGNv
+bnNpc3RlbnQgYXBwbGljYXRpb24gb2YgdGhhdApzeXN0ZW07IGl0IGlzIHVwIHRvIHRoZSBhdXRob3Iv
+ZG9ub3IgdG8gZGVjaWRlIGlmIGhlIG9yIHNoZSBpcyB3aWxsaW5nCnRvIGRpc3RyaWJ1dGUgc29mdHdh
+cmUgdGhyb3VnaCBhbnkgb3RoZXIgc3lzdGVtIGFuZCBhIGxpY2Vuc2VlIGNhbm5vdAppbXBvc2UgdGhh
+dCBjaG9pY2UuCgpUaGlzIHNlY3Rpb24gaXMgaW50ZW5kZWQgdG8gbWFrZSB0aG9yb3VnaGx5IGNsZWFy
+IHdoYXQgaXMgYmVsaWV2ZWQgdG8KYmUgYSBjb25zZXF1ZW5jZSBvZiB0aGUgcmVzdCBvZiB0aGlzIExp
+Y2Vuc2UuCgwKICA4LiBJZiB0aGUgZGlzdHJpYnV0aW9uIGFuZC9vciB1c2Ugb2YgdGhlIFByb2dyYW0g
+aXMgcmVzdHJpY3RlZCBpbgpjZXJ0YWluIGNvdW50cmllcyBlaXRoZXIgYnkgcGF0ZW50cyBvciBieSBj
+b3B5cmlnaHRlZCBpbnRlcmZhY2VzLCB0aGUKb3JpZ2luYWwgY29weXJpZ2h0IGhvbGRlciB3aG8gcGxh
+Y2VzIHRoZSBQcm9ncmFtIHVuZGVyIHRoaXMgTGljZW5zZQptYXkgYWRkIGFuIGV4cGxpY2l0IGdlb2dy
+YXBoaWNhbCBkaXN0cmlidXRpb24gbGltaXRhdGlvbiBleGNsdWRpbmcKdGhvc2UgY291bnRyaWVzLCBz
+byB0aGF0IGRpc3RyaWJ1dGlvbiBpcyBwZXJtaXR0ZWQgb25seSBpbiBvciBhbW9uZwpjb3VudHJpZXMg
+bm90IHRodXMgZXhjbHVkZWQuICBJbiBzdWNoIGNhc2UsIHRoaXMgTGljZW5zZSBpbmNvcnBvcmF0ZXMK
+dGhlIGxpbWl0YXRpb24gYXMgaWYgd3JpdHRlbiBpbiB0aGUgYm9keSBvZiB0aGlzIExpY2Vuc2UuCgog
+IDkuIFRoZSBGcmVlIFNvZnR3YXJlIEZvdW5kYXRpb24gbWF5IHB1Ymxpc2ggcmV2aXNlZCBhbmQvb3Ig
+bmV3IHZlcnNpb25zCm9mIHRoZSBHZW5lcmFsIFB1YmxpYyBMaWNlbnNlIGZyb20gdGltZSB0byB0aW1l
+LiAgU3VjaCBuZXcgdmVyc2lvbnMgd2lsbApiZSBzaW1pbGFyIGluIHNwaXJpdCB0byB0aGUgcHJlc2Vu
+dCB2ZXJzaW9uLCBidXQgbWF5IGRpZmZlciBpbiBkZXRhaWwgdG8KYWRkcmVzcyBuZXcgcHJvYmxlbXMg
+b3IgY29uY2VybnMuCgpFYWNoIHZlcnNpb24gaXMgZ2l2ZW4gYSBkaXN0aW5ndWlzaGluZyB2ZXJzaW9u
+IG51bWJlci4gIElmIHRoZSBQcm9ncmFtCnNwZWNpZmllcyBhIHZlcnNpb24gbnVtYmVyIG9mIHRoaXMg
+TGljZW5zZSB3aGljaCBhcHBsaWVzIHRvIGl0IGFuZCAiYW55CmxhdGVyIHZlcnNpb24iLCB5b3UgaGF2
+ZSB0aGUgb3B0aW9uIG9mIGZvbGxvd2luZyB0aGUgdGVybXMgYW5kIGNvbmRpdGlvbnMKZWl0aGVyIG9m
+IHRoYXQgdmVyc2lvbiBvciBvZiBhbnkgbGF0ZXIgdmVyc2lvbiBwdWJsaXNoZWQgYnkgdGhlIEZyZWUK
+U29mdHdhcmUgRm91bmRhdGlvbi4gIElmIHRoZSBQcm9ncmFtIGRvZXMgbm90IHNwZWNpZnkgYSB2ZXJz
+aW9uIG51bWJlciBvZgp0aGlzIExpY2Vuc2UsIHlvdSBtYXkgY2hvb3NlIGFueSB2ZXJzaW9uIGV2ZXIg
+cHVibGlzaGVkIGJ5IHRoZSBGcmVlIFNvZnR3YXJlCkZvdW5kYXRpb24uCgogIDEwLiBJZiB5b3Ugd2lz
+aCB0byBpbmNvcnBvcmF0ZSBwYXJ0cyBvZiB0aGUgUHJvZ3JhbSBpbnRvIG90aGVyIGZyZWUKcHJvZ3Jh
+bXMgd2hvc2UgZGlzdHJpYnV0aW9uIGNvbmRpdGlvbnMgYXJlIGRpZmZlcmVudCwgd3JpdGUgdG8gdGhl
+IGF1dGhvcgp0byBhc2sgZm9yIHBlcm1pc3Npb24uICBGb3Igc29mdHdhcmUgd2hpY2ggaXMgY29weXJp
+Z2h0ZWQgYnkgdGhlIEZyZWUKU29mdHdhcmUgRm91bmRhdGlvbiwgd3JpdGUgdG8gdGhlIEZyZWUgU29m
+dHdhcmUgRm91bmRhdGlvbjsgd2Ugc29tZXRpbWVzCm1ha2UgZXhjZXB0aW9ucyBmb3IgdGhpcy4gIE91
+ciBkZWNpc2lvbiB3aWxsIGJlIGd1aWRlZCBieSB0aGUgdHdvIGdvYWxzCm9mIHByZXNlcnZpbmcgdGhl
+IGZyZWUgc3RhdHVzIG9mIGFsbCBkZXJpdmF0aXZlcyBvZiBvdXIgZnJlZSBzb2Z0d2FyZSBhbmQKb2Yg
+cHJvbW90aW5nIHRoZSBzaGFyaW5nIGFuZCByZXVzZSBvZiBzb2Z0d2FyZSBnZW5lcmFsbHkuCgoJCQkg
+ICAgTk8gV0FSUkFOVFkKCiAgMTEuIEJFQ0FVU0UgVEhFIFBST0dSQU0gSVMgTElDRU5TRUQgRlJFRSBP
+RiBDSEFSR0UsIFRIRVJFIElTIE5PIFdBUlJBTlRZCkZPUiBUSEUgUFJPR1JBTSwgVE8gVEhFIEVYVEVO
+VCBQRVJNSVRURUQgQlkgQVBQTElDQUJMRSBMQVcuICBFWENFUFQgV0hFTgpPVEhFUldJU0UgU1RBVEVE
+IElOIFdSSVRJTkcgVEhFIENPUFlSSUdIVCBIT0xERVJTIEFORC9PUiBPVEhFUiBQQVJUSUVTClBST1ZJ
+REUgVEhFIFBST0dSQU0gIkFTIElTIiBXSVRIT1VUIFdBUlJBTlRZIE9GIEFOWSBLSU5ELCBFSVRIRVIg
+RVhQUkVTU0VECk9SIElNUExJRUQsIElOQ0xVRElORywgQlVUIE5PVCBMSU1JVEVEIFRPLCBUSEUgSU1Q
+TElFRCBXQVJSQU5USUVTIE9GCk1FUkNIQU5UQUJJTElUWSBBTkQgRklUTkVTUyBGT1IgQSBQQVJUSUNV
+TEFSIFBVUlBPU0UuICBUSEUgRU5USVJFIFJJU0sgQVMKVE8gVEhFIFFVQUxJVFkgQU5EIFBFUkZPUk1B
+TkNFIE9GIFRIRSBQUk9HUkFNIElTIFdJVEggWU9VLiAgU0hPVUxEIFRIRQpQUk9HUkFNIFBST1ZFIERF
+RkVDVElWRSwgWU9VIEFTU1VNRSBUSEUgQ09TVCBPRiBBTEwgTkVDRVNTQVJZIFNFUlZJQ0lORywKUkVQ
+QUlSIE9SIENPUlJFQ1RJT04uCgogIDEyLiBJTiBOTyBFVkVOVCBVTkxFU1MgUkVRVUlSRUQgQlkgQVBQ
+TElDQUJMRSBMQVcgT1IgQUdSRUVEIFRPIElOIFdSSVRJTkcKV0lMTCBBTlkgQ09QWVJJR0hUIEhPTERF
+UiwgT1IgQU5ZIE9USEVSIFBBUlRZIFdITyBNQVkgTU9ESUZZIEFORC9PUgpSRURJU1RSSUJVVEUgVEhF
+IFBST0dSQU0gQVMgUEVSTUlUVEVEIEFCT1ZFLCBCRSBMSUFCTEUgVE8gWU9VIEZPUiBEQU1BR0VTLApJ
+TkNMVURJTkcgQU5ZIEdFTkVSQUwsIFNQRUNJQUwsIElOQ0lERU5UQUwgT1IgQ09OU0VRVUVOVElBTCBE
+QU1BR0VTIEFSSVNJTkcKT1VUIE9GIFRIRSBVU0UgT1IgSU5BQklMSVRZIFRPIFVTRSBUSEUgUFJPR1JB
+TSAoSU5DTFVESU5HIEJVVCBOT1QgTElNSVRFRApUTyBMT1NTIE9GIERBVEEgT1IgREFUQSBCRUlORyBS
+RU5ERVJFRCBJTkFDQ1VSQVRFIE9SIExPU1NFUyBTVVNUQUlORUQgQlkKWU9VIE9SIFRISVJEIFBBUlRJ
+RVMgT1IgQSBGQUlMVVJFIE9GIFRIRSBQUk9HUkFNIFRPIE9QRVJBVEUgV0lUSCBBTlkgT1RIRVIKUFJP
+R1JBTVMpLCBFVkVOIElGIFNVQ0ggSE9MREVSIE9SIE9USEVSIFBBUlRZIEhBUyBCRUVOIEFEVklTRUQg
+T0YgVEhFClBPU1NJQklMSVRZIE9GIFNVQ0ggREFNQUdFUy4KCgkJICAgICBFTkQgT0YgVEVSTVMgQU5E
+IENPTkRJVElPTlMKDAoJQXBwZW5kaXg6IEhvdyB0byBBcHBseSBUaGVzZSBUZXJtcyB0byBZb3VyIE5l
+dyBQcm9ncmFtcwoKICBJZiB5b3UgZGV2ZWxvcCBhIG5ldyBwcm9ncmFtLCBhbmQgeW91IHdhbnQgaXQg
+dG8gYmUgb2YgdGhlIGdyZWF0ZXN0CnBvc3NpYmxlIHVzZSB0byB0aGUgcHVibGljLCB0aGUgYmVzdCB3
+YXkgdG8gYWNoaWV2ZSB0aGlzIGlzIHRvIG1ha2UgaXQKZnJlZSBzb2Z0d2FyZSB3aGljaCBldmVyeW9u
+ZSBjYW4gcmVkaXN0cmlidXRlIGFuZCBjaGFuZ2UgdW5kZXIgdGhlc2UgdGVybXMuCgogIFRvIGRvIHNv
+LCBhdHRhY2ggdGhlIGZvbGxvd2luZyBub3RpY2VzIHRvIHRoZSBwcm9ncmFtLiAgSXQgaXMgc2FmZXN0
+CnRvIGF0dGFjaCB0aGVtIHRvIHRoZSBzdGFydCBvZiBlYWNoIHNvdXJjZSBmaWxlIHRvIG1vc3QgZWZm
+ZWN0aXZlbHkKY29udmV5IHRoZSBleGNsdXNpb24gb2Ygd2FycmFudHk7IGFuZCBlYWNoIGZpbGUgc2hv
+dWxkIGhhdmUgYXQgbGVhc3QKdGhlICJjb3B5cmlnaHQiIGxpbmUgYW5kIGEgcG9pbnRlciB0byB3aGVy
+ZSB0aGUgZnVsbCBub3RpY2UgaXMgZm91bmQuCgogICAgPG9uZSBsaW5lIHRvIGdpdmUgdGhlIHByb2dy
+YW0ncyBuYW1lIGFuZCBhIGJyaWVmIGlkZWEgb2Ygd2hhdCBpdCBkb2VzLj4KICAgIENvcHlyaWdodCAo
+QykgMTl5eSAgPG5hbWUgb2YgYXV0aG9yPgoKICAgIFRoaXMgcHJvZ3JhbSBpcyBmcmVlIHNvZnR3YXJl
+OyB5b3UgY2FuIHJlZGlzdHJpYnV0ZSBpdCBhbmQvb3IgbW9kaWZ5CiAgICBpdCB1bmRlciB0aGUgdGVy
+bXMgb2YgdGhlIEdOVSBHZW5lcmFsIFB1YmxpYyBMaWNlbnNlIGFzIHB1Ymxpc2hlZCBieQogICAgdGhl
+IEZyZWUgU29mdHdhcmUgRm91bmRhdGlvbjsgZWl0aGVyIHZlcnNpb24gMiBvZiB0aGUgTGljZW5zZSwg
+b3IKICAgIChhdCB5b3VyIG9wdGlvbikgYW55IGxhdGVyIHZlcnNpb24uCgogICAgVGhpcyBwcm9ncmFt
+IGlzIGRpc3RyaWJ1dGVkIGluIHRoZSBob3BlIHRoYXQgaXQgd2lsbCBiZSB1c2VmdWwsCiAgICBidXQg
+V0lUSE9VVCBBTlkgV0FSUkFOVFk7IHdpdGhvdXQgZXZlbiB0aGUgaW1wbGllZCB3YXJyYW50eSBvZgog
+ICAgTUVSQ0hBTlRBQklMSVRZIG9yIEZJVE5FU1MgRk9SIEEgUEFSVElDVUxBUiBQVVJQT1NFLiAgU2Vl
+IHRoZQogICAgR05VIEdlbmVyYWwgUHVibGljIExpY2Vuc2UgZm9yIG1vcmUgZGV0YWlscy4KCiAgICBZ
+b3Ugc2hvdWxkIGhhdmUgcmVjZWl2ZWQgYSBjb3B5IG9mIHRoZSBHTlUgR2VuZXJhbCBQdWJsaWMgTGlj
+ZW5zZQogICAgYWxvbmcgd2l0aCB0aGlzIHByb2dyYW07IGlmIG5vdCwgd3JpdGUgdG8gdGhlIEZyZWUg
+U29mdHdhcmUKICAgIEZvdW5kYXRpb24sIEluYy4sIDY3NSBNYXNzIEF2ZSwgQ2FtYnJpZGdlLCBNQSAw
+MjEzOSwgVVNBLgoKQWxzbyBhZGQgaW5mb3JtYXRpb24gb24gaG93IHRvIGNvbnRhY3QgeW91IGJ5IGVs
+ZWN0cm9uaWMgYW5kIHBhcGVyIG1haWwuCgpJZiB0aGUgcHJvZ3JhbSBpcyBpbnRlcmFjdGl2ZSwgbWFr
+ZSBpdCBvdXRwdXQgYSBzaG9ydCBub3RpY2UgbGlrZSB0aGlzCndoZW4gaXQgc3RhcnRzIGluIGFuIGlu
+dGVyYWN0aXZlIG1vZGU6CgogICAgR25vbW92aXNpb24gdmVyc2lvbiA2OSwgQ29weXJpZ2h0IChDKSAx
+OXl5IG5hbWUgb2YgYXV0aG9yCiAgICBHbm9tb3Zpc2lvbiBjb21lcyB3aXRoIEFCU09MVVRFTFkgTk8g
+V0FSUkFOVFk7IGZvciBkZXRhaWxzIHR5cGUgYHNob3cgdycuCiAgICBUaGlzIGlzIGZyZWUgc29mdHdh
+cmUsIGFuZCB5b3UgYXJlIHdlbGNvbWUgdG8gcmVkaXN0cmlidXRlIGl0CiAgICB1bmRlciBjZXJ0YWlu
+IGNvbmRpdGlvbnM7IHR5cGUgYHNob3cgYycgZm9yIGRldGFpbHMuCgpUaGUgaHlwb3RoZXRpY2FsIGNv
+bW1hbmRzIGBzaG93IHcnIGFuZCBgc2hvdyBjJyBzaG91bGQgc2hvdyB0aGUgYXBwcm9wcmlhdGUKcGFy
+dHMgb2YgdGhlIEdlbmVyYWwgUHVibGljIExpY2Vuc2UuICBPZiBjb3Vyc2UsIHRoZSBjb21tYW5kcyB5
+b3UgdXNlIG1heQpiZSBjYWxsZWQgc29tZXRoaW5nIG90aGVyIHRoYW4gYHNob3cgdycgYW5kIGBzaG93
+IGMnOyB0aGV5IGNvdWxkIGV2ZW4gYmUKbW91c2UtY2xpY2tzIG9yIG1lbnUgaXRlbXMtLXdoYXRldmVy
+IHN1aXRzIHlvdXIgcHJvZ3JhbS4KCllvdSBzaG91bGQgYWxzbyBnZXQgeW91ciBlbXBsb3llciAoaWYg
+eW91IHdvcmsgYXMgYSBwcm9ncmFtbWVyKSBvciB5b3VyCnNjaG9vbCwgaWYgYW55LCB0byBzaWduIGEg
+ImNvcHlyaWdodCBkaXNjbGFpbWVyIiBmb3IgdGhlIHByb2dyYW0sIGlmCm5lY2Vzc2FyeS4gIEhlcmUg
+aXMgYSBzYW1wbGU7IGFsdGVyIHRoZSBuYW1lczoKCiAgWW95b2R5bmUsIEluYy4sIGhlcmVieSBkaXNj
+bGFpbXMgYWxsIGNvcHlyaWdodCBpbnRlcmVzdCBpbiB0aGUgcHJvZ3JhbQogIGBHbm9tb3Zpc2lvbicg
+KHdoaWNoIG1ha2VzIHBhc3NlcyBhdCBjb21waWxlcnMpIHdyaXR0ZW4gYnkgSmFtZXMgSGFja2VyLgoK
+ICA8c2lnbmF0dXJlIG9mIFR5IENvb24+LCAxIEFwcmlsIDE5ODkKICBUeSBDb29uLCBQcmVzaWRlbnQg
+b2YgVmljZQoKVGhpcyBHZW5lcmFsIFB1YmxpYyBMaWNlbnNlIGRvZXMgbm90IHBlcm1pdCBpbmNvcnBv
+cmF0aW5nIHlvdXIgcHJvZ3JhbSBpbnRvCnByb3ByaWV0YXJ5IHByb2dyYW1zLiAgSWYgeW91ciBwcm9n
+cmFtIGlzIGEgc3Vicm91dGluZSBsaWJyYXJ5LCB5b3UgbWF5CmNvbnNpZGVyIGl0IG1vcmUgdXNlZnVs
+IHRvIHBlcm1pdCBsaW5raW5nIHByb3ByaWV0YXJ5IGFwcGxpY2F0aW9ucyB3aXRoIHRoZQpsaWJyYXJ5
+LiAgSWYgdGhpcyBpcyB3aGF0IHlvdSB3YW50IHRvIGRvLCB1c2UgdGhlIEdOVSBMaWJyYXJ5IEdlbmVy
+YWwKUHVibGljIExpY2Vuc2UgaW5zdGVhZCBvZiB0aGlzIExpY2Vuc2UuCg
+</mutableString>
+                                            <attributes>
+                                                <font key="NSFont" size="10" name="Courier"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26"/>
+                                                        <textTab alignment="left" location="53"/>
+                                                        <textTab alignment="left" location="80"/>
+                                                        <textTab alignment="left" location="106"/>
+                                                        <textTab alignment="left" location="133"/>
+                                                        <textTab alignment="left" location="160"/>
+                                                        <textTab alignment="left" location="186"/>
+                                                        <textTab alignment="left" location="213"/>
+                                                        <textTab alignment="left" location="240"/>
+                                                        <textTab alignment="left" location="266"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <size key="minSize" width="475" height="211"/>
+                                    <size key="maxSize" width="492" height="10000000"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="41">
+                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="42">
+                            <rect key="frame" x="476" y="1" width="15" height="211"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7" secondAttribute="trailing" constant="20" symbolic="YES" id="7Y8-mU-TUN"/>
+                    <constraint firstAttribute="bottom" secondItem="31" secondAttribute="bottom" constant="20" symbolic="YES" id="9KH-6z-jFf"/>
+                    <constraint firstItem="10" firstAttribute="leading" secondItem="13" secondAttribute="leading" constant="20" symbolic="YES" id="BbI-nx-s8C"/>
+                    <constraint firstItem="31" firstAttribute="leading" secondItem="13" secondAttribute="leading" constant="20" symbolic="YES" id="ObS-bD-7ZX"/>
+                    <constraint firstItem="10" firstAttribute="top" secondItem="13" secondAttribute="top" constant="20" symbolic="YES" id="Q92-KW-UGC"/>
+                    <constraint firstItem="7" firstAttribute="centerY" secondItem="10" secondAttribute="centerY" id="ixs-Fq-AWo"/>
+                    <constraint firstItem="7" firstAttribute="leading" secondItem="10" secondAttribute="trailing" constant="60" id="pWU-Bl-RR3"/>
+                    <constraint firstAttribute="trailing" secondItem="31" secondAttribute="trailing" constant="20" symbolic="YES" id="qgv-20-70y"/>
+                    <constraint firstItem="31" firstAttribute="top" secondItem="10" secondAttribute="bottom" constant="8" symbolic="YES" id="uZg-tS-v9o"/>
+                </constraints>
+            </view>
+        </window>
+        <window title="Info" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="11" userLabel="Info" customClass="NSPanel">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="333" y="567" width="354" height="152"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <view key="contentView" id="6">
+                <rect key="frame" x="0.0" y="0.0" width="354" height="152"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="5" customClass="InfoLifeView">
+                        <rect key="frame" x="-38" y="-13" width="400" height="202"/>
+                        <connections>
+                            <outlet property="authorText" destination="16" id="24"/>
+                            <outlet property="copyrightText" destination="12" id="25"/>
+                            <outlet property="theAppButton" destination="15" id="27"/>
+                            <outlet property="theBox" destination="4" id="28"/>
+                            <outlet property="theTitle" destination="2" id="29"/>
+                            <outlet property="versionText" destination="9" id="26"/>
+                            <outlet property="window" destination="11" id="30"/>
+                        </connections>
+                    </customView>
+                    <box title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="4">
+                        <rect key="frame" x="-1" y="17" width="356" height="6"/>
+                        <view key="contentView" id="kUn-TE-r2F">
+                            <rect key="frame" x="2" y="2" width="352" height="2"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </view>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <font key="titleFont" size="12" name="Helvetica"/>
+                    </box>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="16">
+                        <rect key="frame" x="123" y="60" width="81" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="77" id="e71-rI-aL5"/>
+                            <constraint firstAttribute="height" constant="18" id="qJd-ud-yec"/>
+                        </constraints>
+                        <textFieldCell key="cell" alignment="left" title="by Gil Rivlis" id="40">
+                            <font key="font" size="14" name="Helvetica"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="12">
+                        <rect key="frame" x="127" y="3" width="231" height="13"/>
+                        <textFieldCell key="cell" alignment="left" title="Copyright 1993, Gil Rivlis.  All Rights Reserved." id="38">
+                            <font key="font" size="10" name="Helvetica"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9">
+                        <rect key="frame" x="1" y="3" width="65" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="61" id="YLz-Yg-a5E"/>
+                        </constraints>
+                        <textFieldCell key="cell" alignment="left" title="Version 1.0a" id="37">
+                            <font key="font" size="10" name="Helvetica"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="15">
+                        <rect key="frame" x="18" y="65" width="51" height="51"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="47" id="yUr-2R-bI3"/>
+                        </constraints>
+                        <buttonCell key="cell" type="bevel" title="Cell" bezelStyle="regularSquare" image="NSApplicationIcon" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="39">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="cellTitle"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="showLegal:" target="-2" id="19"/>
+                        </connections>
+                    </button>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2">
+                        <rect key="frame" x="119" y="75" width="67" height="43"/>
+                        <textFieldCell key="cell" alignment="center" title="Life" id="36">
+                            <font key="font" size="36" name="Helvetica"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="9" firstAttribute="leading" secondItem="6" secondAttribute="leading" constant="3" id="2sT-yY-wLX"/>
+                    <constraint firstAttribute="bottom" secondItem="5" secondAttribute="bottom" constant="-13" id="3Po-4A-ldo"/>
+                    <constraint firstAttribute="trailing" secondItem="4" secondAttribute="trailing" constant="2" id="4k1-1w-f7I"/>
+                    <constraint firstItem="4" firstAttribute="top" secondItem="2" secondAttribute="bottom" constant="54" id="9zC-cw-enM"/>
+                    <constraint firstAttribute="trailing" secondItem="5" secondAttribute="trailing" constant="-8" id="C04-hh-7LG"/>
+                    <constraint firstItem="2" firstAttribute="leading" secondItem="15" secondAttribute="trailing" constant="54" id="H58-5V-d2S"/>
+                    <constraint firstItem="15" firstAttribute="leading" secondItem="6" secondAttribute="leading" constant="20" symbolic="YES" id="M8F-4b-UU0"/>
+                    <constraint firstItem="16" firstAttribute="top" secondItem="6" secondAttribute="top" constant="74" id="Q4p-7u-bin"/>
+                    <constraint firstItem="9" firstAttribute="top" secondItem="4" secondAttribute="bottom" constant="5" id="Udm-Bg-pWe"/>
+                    <constraint firstAttribute="trailing" secondItem="12" secondAttribute="trailing" constant="-2" id="VXy-dZ-nxA"/>
+                    <constraint firstItem="9" firstAttribute="baseline" secondItem="12" secondAttribute="baseline" id="ZiX-5G-gEu"/>
+                    <constraint firstItem="16" firstAttribute="leading" secondItem="15" secondAttribute="trailing" constant="58" id="eoz-7V-Nce"/>
+                    <constraint firstItem="4" firstAttribute="top" secondItem="15" secondAttribute="bottom" constant="47" id="mDe-3s-SYs"/>
+                    <constraint firstItem="12" firstAttribute="leading" secondItem="9" secondAttribute="trailing" constant="65" id="neP-Wi-DXJ"/>
+                    <constraint firstItem="4" firstAttribute="leading" secondItem="6" secondAttribute="leading" constant="2" id="onc-CZ-bYT"/>
+                    <constraint firstItem="2" firstAttribute="top" secondItem="6" secondAttribute="top" constant="34" id="p4A-XV-eor"/>
+                    <constraint firstAttribute="bottom" secondItem="9" secondAttribute="bottom" constant="3" id="rWi-aS-SZo"/>
+                    <constraint firstItem="5" firstAttribute="top" secondItem="6" secondAttribute="top" constant="-37" id="vbZ-dw-bn3"/>
+                    <constraint firstItem="15" firstAttribute="top" secondItem="6" secondAttribute="top" constant="38" id="vh2-ad-uKV"/>
+                    <constraint firstItem="5" firstAttribute="leading" secondItem="6" secondAttribute="leading" constant="-38" id="xcF-xF-GRD"/>
+                    <constraint firstItem="4" firstAttribute="top" secondItem="16" secondAttribute="bottom" constant="39" id="ytM-Ik-ToN"/>
+                </constraints>
+            </view>
+        </window>
+    </objects>
+    <resources>
+        <image name="NSApplicationIcon" width="128" height="128"/>
+        <image name="life" width="48" height="48"/>
+    </resources>
+</document>

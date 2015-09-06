@@ -1,0 +1,398 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		550FE1951B9CF704003F208D /* InfoPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 550FE1971B9CF704003F208D /* InfoPanel.xib */; };
+		550FE1981B9CF715003F208D /* Life.xib in Resources */ = {isa = PBXBuildFile; fileRef = 550FE19A1B9CF715003F208D /* Life.xib */; };
+		550FE19B1B9CF71F003F208D /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 550FE19D1B9CF71F003F208D /* Preferences.xib */; };
+		550FE19E1B9CF737003F208D /* Random.nib in Resources */ = {isa = PBXBuildFile; fileRef = 550FE1A01B9CF737003F208D /* Random.nib */; };
+		553141AF1B9A65DB00390795 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 553141AE1B9A65DB00390795 /* main.m */; };
+		553141B11B9A65DB00390795 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 553141B01B9A65DB00390795 /* Assets.xcassets */; };
+		553141C81B9A66AF00390795 /* Generator.m in Sources */ = {isa = PBXBuildFile; fileRef = 553141BC1B9A66AF00390795 /* Generator.m */; settings = {ASSET_TAGS = (); }; };
+		553141C91B9A66AF00390795 /* InfoGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 553141BE1B9A66AF00390795 /* InfoGenerator.m */; settings = {ASSET_TAGS = (); }; };
+		553141CA1B9A66AF00390795 /* InfoLifeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 553141C01B9A66AF00390795 /* InfoLifeView.m */; settings = {ASSET_TAGS = (); }; };
+		553141CC1B9A66AF00390795 /* LifeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 553141C31B9A66AF00390795 /* LifeView.m */; settings = {ASSET_TAGS = (); }; };
+		553141CD1B9A66AF00390795 /* PrefController.m in Sources */ = {isa = PBXBuildFile; fileRef = 553141C51B9A66AF00390795 /* PrefController.m */; settings = {ASSET_TAGS = (); }; };
+		553141CE1B9A66AF00390795 /* RandomGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 553141C71B9A66AF00390795 /* RandomGenerator.m */; settings = {ASSET_TAGS = (); }; };
+		553141D01B9A66BA00390795 /* Help in Resources */ = {isa = PBXBuildFile; fileRef = 553141CF1B9A66BA00390795 /* Help */; settings = {ASSET_TAGS = (); }; };
+		553141E21B9AC38F00390795 /* Mail.app in Sources */ = {isa = PBXBuildFile; fileRef = 553141E01B9AC33D00390795 /* Mail.app */; };
+		55E2F09F1B9B3EC9009B90C1 /* Info.life in Resources */ = {isa = PBXBuildFile; fileRef = 55E2F09D1B9B3EC9009B90C1 /* Info.life */; settings = {ASSET_TAGS = (); }; };
+		55E2F0A01B9B3EC9009B90C1 /* LifeSamples in Resources */ = {isa = PBXBuildFile; fileRef = 55E2F09E1B9B3EC9009B90C1 /* LifeSamples */; settings = {ASSET_TAGS = (); }; };
+		55E2F0A21B9B5239009B90C1 /* LifeChar.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E2F0A11B9B5239009B90C1 /* LifeChar.m */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		553141DF1B9AC2F200390795 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.app";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILES_DIR)/$(INPUT_FILE_BASE).h",
+			);
+			script = "sdef \"$INPUT_FILE_PATH\" | sdp -fh -o \"$DERIVED_FILES_DIR\" --basename \"$INPUT_FILE_BASE\" --bundleid `defaults read \"$INPUT_FILE_PATH/Contents/Info\" CFBundleIdentifier`";
+		};
+/* End PBXBuildRule section */
+
+/* Begin PBXFileReference section */
+		550FE1961B9CF704003F208D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/InfoPanel.xib; sourceTree = "<group>"; };
+		550FE1991B9CF715003F208D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Life.xib; sourceTree = "<group>"; };
+		550FE19C1B9CF71F003F208D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Preferences.xib; sourceTree = "<group>"; };
+		550FE19F1B9CF737003F208D /* en */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = en; path = en.lproj/Random.nib; sourceTree = "<group>"; };
+		553141A71B9A65DB00390795 /* NeXTLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeXTLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		553141AA1B9A65DB00390795 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		553141AB1B9A65DB00390795 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		553141AE1B9A65DB00390795 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		553141B01B9A65DB00390795 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		553141B51B9A65DB00390795 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		553141BB1B9A66AF00390795 /* Generator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Generator.h; sourceTree = "<group>"; };
+		553141BC1B9A66AF00390795 /* Generator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Generator.m; sourceTree = "<group>"; };
+		553141BD1B9A66AF00390795 /* InfoGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoGenerator.h; sourceTree = "<group>"; };
+		553141BE1B9A66AF00390795 /* InfoGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoGenerator.m; sourceTree = "<group>"; };
+		553141BF1B9A66AF00390795 /* InfoLifeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoLifeView.h; sourceTree = "<group>"; };
+		553141C01B9A66AF00390795 /* InfoLifeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoLifeView.m; sourceTree = "<group>"; };
+		553141C11B9A66AF00390795 /* LifeChar.psw */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LifeChar.psw; sourceTree = "<group>"; };
+		553141C21B9A66AF00390795 /* LifeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LifeView.h; sourceTree = "<group>"; };
+		553141C31B9A66AF00390795 /* LifeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LifeView.m; sourceTree = "<group>"; };
+		553141C41B9A66AF00390795 /* PrefController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefController.h; sourceTree = "<group>"; };
+		553141C51B9A66AF00390795 /* PrefController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrefController.m; sourceTree = "<group>"; };
+		553141C61B9A66AF00390795 /* RandomGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomGenerator.h; sourceTree = "<group>"; };
+		553141C71B9A66AF00390795 /* RandomGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomGenerator.m; sourceTree = "<group>"; };
+		553141CF1B9A66BA00390795 /* Help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Help; sourceTree = "<group>"; };
+		553141E01B9AC33D00390795 /* Mail.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = Mail.app; path = /Applications/Mail.app; sourceTree = "<absolute>"; };
+		55E2F09D1B9B3EC9009B90C1 /* Info.life */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Info.life; sourceTree = "<group>"; };
+		55E2F09E1B9B3EC9009B90C1 /* LifeSamples */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LifeSamples; sourceTree = "<group>"; };
+		55E2F0A11B9B5239009B90C1 /* LifeChar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LifeChar.m; sourceTree = "<group>"; };
+		55E2F0A31B9B5249009B90C1 /* LifeChar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LifeChar.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		553141A41B9A65DB00390795 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5531419E1B9A65DB00390795 = {
+			isa = PBXGroup;
+			children = (
+				553141E01B9AC33D00390795 /* Mail.app */,
+				553141A91B9A65DB00390795 /* NeXTLife */,
+				553141A81B9A65DB00390795 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		553141A81B9A65DB00390795 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				553141A71B9A65DB00390795 /* NeXTLife.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		553141A91B9A65DB00390795 /* NeXTLife */ = {
+			isa = PBXGroup;
+			children = (
+				553141BB1B9A66AF00390795 /* Generator.h */,
+				553141BC1B9A66AF00390795 /* Generator.m */,
+				553141BD1B9A66AF00390795 /* InfoGenerator.h */,
+				553141BE1B9A66AF00390795 /* InfoGenerator.m */,
+				553141BF1B9A66AF00390795 /* InfoLifeView.h */,
+				553141C01B9A66AF00390795 /* InfoLifeView.m */,
+				553141C11B9A66AF00390795 /* LifeChar.psw */,
+				55E2F0A31B9B5249009B90C1 /* LifeChar.h */,
+				55E2F0A11B9B5239009B90C1 /* LifeChar.m */,
+				553141C21B9A66AF00390795 /* LifeView.h */,
+				553141C31B9A66AF00390795 /* LifeView.m */,
+				553141C41B9A66AF00390795 /* PrefController.h */,
+				553141C51B9A66AF00390795 /* PrefController.m */,
+				553141C61B9A66AF00390795 /* RandomGenerator.h */,
+				553141C71B9A66AF00390795 /* RandomGenerator.m */,
+				553141AA1B9A65DB00390795 /* AppDelegate.h */,
+				553141AB1B9A65DB00390795 /* AppDelegate.m */,
+				553141B01B9A65DB00390795 /* Assets.xcassets */,
+				550FE1971B9CF704003F208D /* InfoPanel.xib */,
+				550FE19A1B9CF715003F208D /* Life.xib */,
+				550FE19D1B9CF71F003F208D /* Preferences.xib */,
+				550FE1A01B9CF737003F208D /* Random.nib */,
+				553141B51B9A65DB00390795 /* Info.plist */,
+				553141AD1B9A65DB00390795 /* Supporting Files */,
+			);
+			name = NeXTLife;
+			sourceTree = "<group>";
+		};
+		553141AD1B9A65DB00390795 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				55E2F09D1B9B3EC9009B90C1 /* Info.life */,
+				55E2F09E1B9B3EC9009B90C1 /* LifeSamples */,
+				553141CF1B9A66BA00390795 /* Help */,
+				553141AE1B9A65DB00390795 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		553141A61B9A65DB00390795 /* NeXTLife */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 553141B81B9A65DB00390795 /* Build configuration list for PBXNativeTarget "NeXTLife" */;
+			buildPhases = (
+				553141A31B9A65DB00390795 /* Sources */,
+				553141A41B9A65DB00390795 /* Frameworks */,
+				553141A51B9A65DB00390795 /* Resources */,
+			);
+			buildRules = (
+				553141DF1B9AC2F200390795 /* PBXBuildRule */,
+			);
+			dependencies = (
+			);
+			name = NeXTLife;
+			productName = NeXTLife;
+			productReference = 553141A71B9A65DB00390795 /* NeXTLife.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5531419F1B9A65DB00390795 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "C.W. Betts";
+				TargetAttributes = {
+					553141A61B9A65DB00390795 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = 553141A21B9A65DB00390795 /* Build configuration list for PBXProject "NeXTLife" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5531419E1B9A65DB00390795;
+			productRefGroup = 553141A81B9A65DB00390795 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				553141A61B9A65DB00390795 /* NeXTLife */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		553141A51B9A65DB00390795 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55E2F0A01B9B3EC9009B90C1 /* LifeSamples in Resources */,
+				550FE19E1B9CF737003F208D /* Random.nib in Resources */,
+				55E2F09F1B9B3EC9009B90C1 /* Info.life in Resources */,
+				550FE1951B9CF704003F208D /* InfoPanel.xib in Resources */,
+				550FE19B1B9CF71F003F208D /* Preferences.xib in Resources */,
+				553141B11B9A65DB00390795 /* Assets.xcassets in Resources */,
+				553141D01B9A66BA00390795 /* Help in Resources */,
+				550FE1981B9CF715003F208D /* Life.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		553141A31B9A65DB00390795 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				553141E21B9AC38F00390795 /* Mail.app in Sources */,
+				553141AF1B9A65DB00390795 /* main.m in Sources */,
+				553141C91B9A66AF00390795 /* InfoGenerator.m in Sources */,
+				55E2F0A21B9B5239009B90C1 /* LifeChar.m in Sources */,
+				553141CC1B9A66AF00390795 /* LifeView.m in Sources */,
+				553141CE1B9A66AF00390795 /* RandomGenerator.m in Sources */,
+				553141C81B9A66AF00390795 /* Generator.m in Sources */,
+				553141CA1B9A66AF00390795 /* InfoLifeView.m in Sources */,
+				553141CD1B9A66AF00390795 /* PrefController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		550FE1971B9CF704003F208D /* InfoPanel.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				550FE1961B9CF704003F208D /* en */,
+			);
+			name = InfoPanel.xib;
+			sourceTree = "<group>";
+		};
+		550FE19A1B9CF715003F208D /* Life.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				550FE1991B9CF715003F208D /* en */,
+			);
+			name = Life.xib;
+			sourceTree = "<group>";
+		};
+		550FE19D1B9CF71F003F208D /* Preferences.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				550FE19C1B9CF71F003F208D /* en */,
+			);
+			name = Preferences.xib;
+			sourceTree = "<group>";
+		};
+		550FE1A01B9CF737003F208D /* Random.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				550FE19F1B9CF737003F208D /* en */,
+			);
+			name = Random.nib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		553141B61B9A65DB00390795 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		553141B71B9A65DB00390795 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		553141B91B9A65DB00390795 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = NeXTLife/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.maddthesane.NeXTLife;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		553141BA1B9A65DB00390795 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = NeXTLife/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.maddthesane.NeXTLife;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		553141A21B9A65DB00390795 /* Build configuration list for PBXProject "NeXTLife" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				553141B61B9A65DB00390795 /* Debug */,
+				553141B71B9A65DB00390795 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		553141B81B9A65DB00390795 /* Build configuration list for PBXNativeTarget "NeXTLife" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				553141B91B9A65DB00390795 /* Debug */,
+				553141BA1B9A65DB00390795 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5531419F1B9A65DB00390795 /* Project object */;
+}

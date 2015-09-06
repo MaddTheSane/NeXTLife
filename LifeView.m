@@ -8,49 +8,61 @@
 #import "LifeView.h"
 
 @implementation LifeView
+@synthesize populationSize = popSize;
+@synthesize lifeChar = theLifeChar;
+@synthesize universe;
 
-+ initialize
+
++ (void)initialize
 {
-	static NXDefaultsVector LifeDefaults = { //Default Defaults...
-		{"UniverseHeight", "120"},
-		{"UniverseWidth", "120"},
-		{"Mail", "Warn"},
-		{"LifeSymbol", "0"},
-		{ NULL, NULL }
-	};
-	NXRegisterDefaults("LifeByGR",LifeDefaults);
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		NSDictionary *defaults = @{
+								 @"UniverseHeight": @120,
+								 @"UniverseWidth": @120,
+								 @"Mail": @"Warn",
+								 @"LifeSymbol": @"0",
+								 };
+		
+		[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
+	});
+}
+
+- (instancetype)initWithFrame:(NSRect)frameRect
+{
+	if (self = [super initWithFrame:frameRect]) {
+		int i;
+		
+		zoomSize = 1.5;		/* init zoom Size */
+		
+		if(population) free(population);
+		universe.height = atoi(NXGetDefaultValue("LifeByGR","UniverseHeight"));
+		universe.width  = atoi(NXGetDefaultValue("LifeByGR","UniverseWidth"));
+		population = malloc(sizeof(char)*universe.height*universe.width);
+		for (i = 0; i<universe.width*universe.height; i++) {
+			population[i] = 0;
+		}
+		
+		/* set the life form symbol. */
+		theLifeChar = 'a' + atoi(NXGetDefaultValue("LifeByGR","LifeSymbol"));
+		self = [super initWithFrame:frameRect];
+		[self sizeTo:(float)(FONT_SIZE*universe.width)
+					:(float)(FONT_SIZE*universe.height) ];
+		[self setDrawSize:(float)universe.width :(float)universe.height];
+		[self setDrawOrigin:-0.5 :-0.5];
+	}
 	return self;
 }
 
-- initFrame:(NXRect *)frameRect
+-(BOOL)isOpaque
 {
-	int i;
-		
-	zoomSize = 1.5;		/* init zoom Size */
-	
-	if(population) free(population);
-	universe.height = atoi(NXGetDefaultValue("LifeByGR","UniverseHeight"));
-	universe.width  = atoi(NXGetDefaultValue("LifeByGR","UniverseWidth"));
-	population = malloc(sizeof(char)*universe.height*universe.width);
-	for (i = 0; i<universe.width*universe.height; i++) {
-		population[i] = 0;
-	}
-	
-	/* set the life form symbol. */
-	theLifeChar = 'a' + atoi(NXGetDefaultValue("LifeByGR","LifeSymbol"));
-	[super initFrame:frameRect];
-	[self sizeTo:(float)(FONT_SIZE*universe.width) 	
-							:(float)(FONT_SIZE*universe.height) ];
-	[self setDrawSize:(float)universe.width :(float)universe.height];
-	[self setDrawOrigin:-0.5 :-0.5];
-	[self setOpaque:YES];	
-	return [self display];
+	return YES;
 }
 
 /* we need this method when we zoom, or change shape... */
-- resetFrame
+- (void)resetFrame
 {
-	NXRect	obounds = bounds;
+	NSRect	obounds = [self bounds];
 	
 	[self convertRectToSuperview:&obounds];
 	[self sizeTo:(float)(zoomSize*universe.width*FONT_SIZE)
@@ -58,48 +70,47 @@
 	[self setDrawSize:(float)universe.width :(float)universe.height];
 	[self setDrawOrigin:-0.5 :-0.5];
 	[self convertRectFromSuperview:&obounds];
-	return [self display];
+	[self setNeedsDisplay:YES];
 }
 
 /* doesn't work and not used..., yet */
-- setScrollersTo:(float)aFloat
+- (void)setScrollersTo:(float)aFloat
 {
 	id theScrollview = [[self superview] superview];
 	
-	[ [ theScrollview horizScroller] setFloatValue:aFloat ];
-	[ [ theScrollview  vertScroller] setFloatValue:aFloat ];
-	
-	return self;
+	[ [ theScrollview horizontalScroller] setFloatValue:aFloat ];
+	[ [ theScrollview  verticalScroller] setFloatValue:aFloat ];
 }
 
 
-- showGrid:sender
+- (IBAction)showGrid:(id)sender
 {
 	if(!gridOn) {
 		gridOn = YES;
-		[gridButton setTitle:"Hide Grid"];
+		[gridButton setTitle:@"Hide Grid"];
 	}
 	else {
 		gridOn = NO;
-		[gridButton setTitle:"Show Grid"];
+		[gridButton setTitle:@"Show Grid"];
 	}
 	return [self display];
 }
 
 /* the drawing method. Note the fancy zyshow! */
-- drawSelf:(const NXRect *)rects :(int)rectCount
+- (void)drawRect:(NSRect)dirtyRect
 {
 	float	oldX = 0.0, oldY = 0.0;			/* Hold the last full one */
 	float 	*xyPositions;					/* pairs of positions...	  */
 	char	*charString;					/* put enough 'special' chars */
 	float	firstX = 0.0, firstY = 0.0;			/* hold the first for xyshow */
 	int		i, j;
-
+	
 	PSWDefineFont("LifeFont",1.0);			/* Get the special font */
-
- 	PSsetgray(NX_WHITE);	
-	NXRectFill(&bounds);			/* for the white background */
- 	
+	
+	[[NSColor whiteColor] set];
+	PSsetgray(NX_WHITE);
+	NSRectFill(_bounds);			/* for the white background */
+	
 	/* draw the Grid, if gridOn */
 	if (gridOn) {
 		float tmp = -0.5;
@@ -128,7 +139,7 @@
 	}
 	charString[popSize] = 0;
 	
-	/* skip begining of population array */	
+	/* skip begining of population array */
 	i=0;
 	while( (population[i++] == 0) && (i<universe.width*universe.height) );
 	j = i - 1;
@@ -150,31 +161,31 @@
 			j++;
 		}
 	}
-	/* debugging printf... 
-	printf("drawSelf::\n");
-	printf("popSize = %d\n",popSize);
-	printf("charStrings = %s\n",charString);
-	for(j=universe.height-1;j>=0;j--) {
+	/* debugging printf...
+	 printf("drawSelf::\n");
+	 printf("popSize = %d\n",popSize);
+	 printf("charStrings = %s\n",charString);
+	 for(j=universe.height-1;j>=0;j--) {
 		for(i=0;i<universe.width;i++) {
-			printf("%3d",population[j*universe.width+i]);
+	 printf("%3d",population[j*universe.width+i]);
 		}
 		printf("\n");
-	}
-	printf("\n");
-	*/
+	 }
+	 printf("\n");
+	 */
 	/* Now we draw, at last */
 	PSsetgray(NX_BLACK);
 	PSWXYShow( firstX, firstY, charString, xyPositions, 2*popSize);
 	[popSizeField setIntValue:popSize];
 	/* free old stuff */
-	cfree(xyPositions);
-	cfree(charString);
+	free(xyPositions);
+	free(charString);
 	
 	return self;
 }
 
 /* display this population (gets called by generators...) */
-- showPopulation:(char *)aPopulation 
+- (void)showPopulation:(char *)aPopulation
 						ofSize:(int)aSize 
 						andUniverse:(IntNXSize)aUniverse
 {
@@ -193,39 +204,26 @@
 		population[i] = aPopulation[i];
 	}
 	popSize = aSize;
-	return [self resetFrame];
+	[self resetFrame];
 }
 
 /* save as above with current universe */
-- showPopulation:(char *)aPopulation ofSize:(int)aSize
+- (void)showPopulation:(char *)aPopulation ofSize:(int)aSize
 {
 	[self showPopulation:aPopulation ofSize:aSize andUniverse:universe];
-	return self;
 }
 
 /* this get the population from LiveView. Note that only LifeView keeps the
  * uptodate population. This gets called by save methods...
  */
-- takePopulation:(char **)aPopulation andSize:(int *)aSize
+- (void)takePopulation:(char **)aPopulation andSize:(int *)aSize
 {
 	*aPopulation = population;
 	*aSize = popSize;
-	return self;
-}
-
-/* access to variables */
-- (IntNXSize)universe
-{
-	return universe;
-}
-
-- (int)popSize
-{
-	return popSize;
 }
 
 /* set new size */
-- setUniverse:(IntNXSize)aUniverse
+- (void)setUniverse:(IntNXSize)aUniverse
 {
 	universe.width  = aUniverse.width;
 	universe.height = aUniverse.height;
@@ -234,35 +232,17 @@
 								:(float)(FONT_SIZE*universe.height) ];
 	[self setDrawSize:(float)universe.width :(float)universe.height];
 	[self setDrawOrigin:-0.5 :-0.5];
-
-	return self;
 }
 
-- setLifeCharTo:(char)aChar;
-{
-	theLifeChar = aChar;
-	return self;
-}
+@synthesize zoom = zoomSize;
 
-- (char)lifeChar
-{
-	return theLifeChar;
-}
-
-- setZoom:(float)aSize
-{
-	zoomSize = aSize;
-	return [self resetFrame];
-}
-
-- takeFloatSize:sender
+- (IBAction)takeFloatSize:(id)sender
 {
 	[self setZoom:[sender floatValue] ];
-	return self;
 }
 
 /* draws a new cell, or deletes old cell. this should get highly modified */
-- mouseDown:(NXEvent *)theEvent
+- (void)mouseDown:(NSEvent *)theEvent
 {
 	int tmp;
 	NXPoint center = theEvent->location;		/* get mouse location 		*/
@@ -277,7 +257,7 @@
 		population[tmp] = 10;
 		popSize++;
 	}	
-	return [self display];
+	[self setNeedsDisplay:YES];
 }
 
 /* calculate new population. This algorithm was lifted from another Life 
@@ -285,9 +265,9 @@
  */
 - (void)calculate:(char *)aPopulation
 {
-	register int i,j;
+	int i,j;
 	int 	newPopSize=0;
-	register char *rp = aPopulation+universe.width+1,*ws;
+	char *rp = aPopulation+universe.width+1,*ws;
 	
 	for(j=1; j< universe.height-1; j++) {
 	    for(i=1; i< universe.width-1; i++) {
@@ -324,17 +304,16 @@
 	popSize = newPopSize;
 }
 
-- calculate
+- (void)calculate
 {
 	[self calculate:population];
-	return self;
 }
 
-- free
+- (void)dealloc
 {
-	free(population);
-	[super free];
-	return self;
+	if (population) {
+		free(population);
+	}
 }
 
 @end

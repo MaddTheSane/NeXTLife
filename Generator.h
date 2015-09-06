@@ -4,77 +4,74 @@
  * Copyright (c) 1993 Gil Rivlis
  */
 
-#import <appkit/appkit.h>
+#import <Cocoa/Cocoa.h>
 #import "LifeView.h"
+@class InfoGenerator;
 
 #define VERSION_STRING "Version 1.0a"
 
-@interface Generator:Object
+@interface Generator: NSObject <NSApplicationDelegate>
 {
-    id		generationField;
-    id		lifeView;
-    id		runButton;			//we need to change the icon
-    id		runMenuButton;		//we need to change title
-	id		filenameField;
-	id		prefController;		//handles on prefcontroller
-	id		infoGenerator;		//  and info controller
-	id		randomGenerator;	//  and random generator
-	id		samplesMenu;		//The samples submenu
+    IBOutlet id		generationField;
+    IBOutlet NSButton		*runButton;			//we need to change the icon
+    IBOutlet id		runMenuButton;		//we need to change title
+	IBOutlet id		filenameField;
+	IBOutlet id		prefController;		//handles on prefcontroller
+	IBOutlet InfoGenerator		*infoGenerator;		//  and info controller
+	IBOutlet id		randomGenerator;	//  and random generator
+	IBOutlet NSMenu			*samplesMenu;		//The samples submenu
 	BOOL	running;			//Are we animating?
-	char	*filename;			//The file loaded...
-	DPSTimedEntry	runningTE;	//For animation
+	NSString	*filename;			//The file loaded...
+	NSTimeInterval	runningTE;	//For animation
 	int 	generation;
 	double	speed;
 	BOOL	menuLoaded;			//We need to contoll the number of times
 								//we load the Sample Menu. Otherwise when
 								//InfoPanle awakesFromNib, it will get reloaded
 }
+@property (weak) IBOutlet LifeView *lifeView;
 
 // initialize
-- init;
-- awakeFromNib;
+- (instancetype)init;
 
 // Action methods...
-- clear:sender;
-- runStop:sender;
-- step:sender;
+- (IBAction)clear:(id)sender;
+- (IBAction)runStop:(id)sender;
+- (IBAction)step:(id)sender;
 
 // File handling
-- setFilename:(const char *)aFilename;
-- saveAs:sender;
-- save:sender;
-- load:sender;
-- loadFile:(const char *)aFilename;
-- loadSample:sender;
-- revertToSaved:sender;
+@property (nonatomic, copy) NSString *filename;
+- (IBAction)saveAs:(id)sender;
+- (IBAction)save:(id)sender;
+- (IBAction)load:(id)sender;
+- (BOOL)loadFile:(NSString *)aFilename;
+- (IBAction)loadSample:(id)sender;
+- (IBAction)revertToSaved:(id)sender;
 
 // for animation
-- go;
-- removeTE;
+- (void)go;
+- (void)removeTE;
 
 
 // other nibs dynamically loaded...
-- showInfo:sender;
-- showLegal:sender;
-- showPrefs:sender;
-- startRandomTool:sender;
+- (IBAction)showInfo:(id)sender;
+- (IBAction)showLegal:(id)sender;
+- (IBAction)showPrefs:(id)sender;
+- (IBAction)startRandomTool:(id)sender;
 
 // the dynamic load of the Samples Menu.
-- loadSamplesMenuFromDirectory:(const char *)aDirectory;
-- addSampleMenuCell:(char *)aTitle;
+- (void)loadSamplesMenuFromDirectory:(NSString *)aDirectory;
+- (void)addSampleMenuCell:(NSString*)aTitle;
 
 //Various variable access
-- setSpeed:sender;
-- resetSizeTo:(IntNXSize)aSize;
-- lifeView;
-- setGeneration:(int)aGeneration;
-- (int)generation;
+- (IBAction)setSpeed:(id)sender;
+- (void)resetSizeTo:(IntNXSize)aSize;
+@property (nonatomic) int generation;
 
 // Mail Speaker...
-- suggestion:sender;
+- (IBAction)suggestion:(id)sender;
 
 // termination
-- appWillTerminate:sender;
-- free;
+//- appWillTerminate:(id)sender;
 
 @end

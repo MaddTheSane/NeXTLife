@@ -14,23 +14,20 @@ double distance(double x, double y, double centerX, double centerY)
 }
 
 @implementation RandomGenerator
+@synthesize window;
 
 /* When we awakeFromNib we set the initial choice for a view. */
-- awakeFromNib
+- (void)awakeFromNib
 {
+	[super awakeFromNib];
 	whichApply = ISOTROPIC;
 	[self setDistToView:[isotropicView contentView] ];
-	return self;
 }
 
 /* Returns the window, so we can orderFront when initializing */ 
-- window
-{
-	return window;
-}
 
 /* Gets called by the pop-up menu and sets the distribution view we want */
-- setDistribution:sender
+- (IBAction)setDistribution:(id)sender
 {
 	id newView = nil;
 	
@@ -48,42 +45,40 @@ double distance(double x, double y, double centerX, double centerY)
 				break;
 	}
 	[self setDistToView:newView];
-	return self;
 }
 
 /* Sets the wanted view in multiView (which is the only view we actually see */
-- setDistToView:theView
+- (void)setDistToView:(NSView*)theView
 {
-	NXRect	boxRect, viewRect;
-	
-	[multiView getFrame:&boxRect];
-	[theView getFrame:&viewRect];
+	NSRect	boxRect, viewRect;
+	boxRect = viewRect = [multiView frame];
 	
 	[multiView setContentView:theView];
-	NX_X(&viewRect) = (NX_WIDTH(&boxRect)-NX_WIDTH(&viewRect)) / 2.0;
-	NX_Y(&viewRect) = (NX_HEIGHT(&boxRect)-NX_HEIGHT(&viewRect)) / 2.0;
+	viewRect.origin.x = (boxRect.size.width - viewRect.size.width) / 2.0;
+	viewRect.origin.y = (boxRect.size.height - viewRect.size.height) / 2.0;
 	
-	[theView setFrame:&viewRect];
+	theView.frame = viewRect;
 	[multiView display];
-	return self;
 }
 
 /* obvious */
-- apply:sender
+- (IBAction)apply:(id)sender
 {
 	switch (whichApply) {
-		case ISOTROPIC: [self isotropicDraw];
-						break;
-		case GAUSSIAN:	[self gaussianDraw];
-						break;
-		case STEP:		[self stepDraw];
-						break;
+		case ISOTROPIC:
+			[self isotropicDraw];
+			break;
+		case GAUSSIAN:
+			[self gaussianDraw];
+			break;
+		case STEP:
+			[self stepDraw];
+			break;
 	}
-    return self;
 }
 
 /* constant distribution draw */
-- isotropicDraw
+- (void)isotropicDraw
 {
 	int i;
 	float	density	= [isoPercentField floatValue]; // How dense ?
@@ -108,10 +103,9 @@ double distance(double x, double y, double centerX, double centerY)
 	[theGenerator clear:nil];
 	[lifeView showPopulation:population ofSize:popSize]; // display
 	free(population);
-	return self;
 }
 
-- gaussianDraw
+- (void)gaussianDraw
 {
 	int x,y;
 	float	density	= [gaussPercentField floatValue];	  // the density
@@ -148,11 +142,10 @@ double distance(double x, double y, double centerX, double centerY)
 	[theGenerator clear:nil];
 	[lifeView showPopulation:population ofSize:popSize];
 	free(population);
-	return self;
 }
 
 /* fixed density at the center with some width */
-- stepDraw
+- (void)stepDraw
 {
 	int x,y;
 	float	density	= [stepDensityField floatValue];	  // the density
@@ -190,7 +183,6 @@ double distance(double x, double y, double centerX, double centerY)
 	[theGenerator clear:nil];
 	[lifeView showPopulation:population ofSize:popSize];
 	free(population);
-	return self;
 }
 
 @end
