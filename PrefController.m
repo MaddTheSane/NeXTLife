@@ -84,7 +84,7 @@
 - (IBAction)useNow:(id)sender
 {
 	IntNXSize newSize;
-	id theLifeView = [theGenerator lifeView];
+	LifeView *theLifeView = [theGenerator lifeView];
 	
 	switch (whichOne) {
 		case SIZE_PREF:

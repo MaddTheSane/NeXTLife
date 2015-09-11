@@ -5,8 +5,7 @@
  */
 
 #import <Cocoa/Cocoa.h>
-//#import "LifeChar.h"
-@class LifeChar;
+#import "LifeChar.h"
 
 #define FONT_SIZE 4.0
 

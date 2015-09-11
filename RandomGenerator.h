@@ -32,7 +32,7 @@ typedef NS_ENUM(NSInteger, WhichDraw) {
 	IBOutlet NSBox	*stepView;			//step
 	IBOutlet NSBox	*multiView;			//the view that gets displayed in window
 	char	*population;	//a population matrix
-	int	popSize;			//it's size
+	int	popSize;			//its size
 	IntNXSize	theUniverse;//an integer NXSize (for the universe)
 	WhichDraw	whichApply;			//A flag to set which drawing we need to do.
 }

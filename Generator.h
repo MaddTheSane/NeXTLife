@@ -22,9 +22,9 @@
 	IBOutlet NSMenu			*samplesMenu;		//The samples submenu
 	BOOL	running;			//Are we animating?
 	NSString	*filename;			//The file loaded...
-	NSTimeInterval	runningTE;	//For animation
+	NSTimer	*runningTE;	//For animation
 	int 	generation;
-	double	speed;
+	NSTimeInterval	speed;
 	BOOL	menuLoaded;			//We need to contoll the number of times
 								//we load the Sample Menu. Otherwise when
 								//InfoPanle awakesFromNib, it will get reloaded

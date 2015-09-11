@@ -47,13 +47,13 @@
 //- drawSelf:(const NSRect *)rects :(int)rectCount
 - (void)drawRect:(NSRect)rects
 {
-	float	oldX = 0.0, oldY = 0.0;			/* Hold the last full one */
+	CGFloat	oldX = 0.0, oldY = 0.0;			/* Hold the last full one */
 	float 	*xyPositions;					/* pairs of positions...	  */
 	char	*charString;					/* put enough 'special' chars */
-	float	firstX = 0.0, firstY = 0.0;			/* hold the first for xyshow */
+	CGFloat	firstX = 0.0, firstY = 0.0;		/* hold the first for xyshow */
 	int		i, j;
 
-	//PSWDefineFont("LifeFont",1.0);			/* Get the special font */
+	PSWDefineFont("LifeFont",1.0);			/* Get the special font */
 	
 	/* Allocate the correct memory size */
 	xyPositions = calloc( 2*popSize - 1, sizeof(float) );
@@ -89,10 +89,8 @@
 	}
 	/* Now we draw, at last */
 	[[NSColor lightGrayColor] set];
- 	//PSsetgray(NX_LTGRAY);
 	NSRectFill(_bounds);			/* for the background */
 	[[NSColor darkGrayColor] set];
-	//PSsetgray(NX_DKGRAY);
 	PSWXYShow( firstX, firstY, charString, xyPositions, 2*popSize);
 	[popSizeField setIntValue:popSize];
 	/* free old stuff */

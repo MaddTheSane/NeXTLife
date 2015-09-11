@@ -8,15 +8,16 @@
 
 #import "Generator.h"
 
+@class InfoLifeView;
+
 @interface InfoGenerator: Generator
 {
-    IBOutlet id	infoLifeView;
-    IBOutlet id	panel;
-    IBOutlet id	window;
+    IBOutlet InfoLifeView	*infoLifeView;
 }
 
-- window;
-- panel;
-- resetSpeed:(float)aSpeed;
+@property (weak) IBOutlet NSPanel *panel;
+@property (weak) IBOutlet NSWindow *window;
+
+- (void)resetSpeed:(float)aSpeed;
 
 @end

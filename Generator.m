@@ -13,18 +13,10 @@
 @end
 
 
-/* the handler for the TimedEntry. the method go calls the stepping.
- */
-void handler(NSTimeInterval teNumber, double now, void *userData)
-{
-	id obj = (__bridge id)userData;
-	[obj go];
-}
-
 static void swap( char *v[], int i, int j);
 
 /* a quick sort */
-void qqsort(char *v[], int left, int right)
+static void qqsort(char *v[], int left, int right)
 {
 	int i, last;
 	void swap(char *v[], int i, int j);
@@ -123,6 +115,9 @@ void swap( char *v[], int i, int j)
 		[runButton setState: YES];
 		[runMenuButton setTitle:@"Stop"];
 		/* the Timed entry calls the handler ... */
+		//+ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(nullable id)userInfo repeats:(BOOL)yesOrNo;
+
+		runningTE = [NSTimer scheduledTimerWithTimeInterval:speed target:self selector:@selector(go) userInfo:nil repeats:YES];
 		//runningTE = DPSAddTimedEntry(speed,&handler,
 		//			self,NX_BASETHRESHOLD);
 	} else {
@@ -320,14 +315,14 @@ void swap( char *v[], int i, int j)
 - (void)go
 {
 	[self step:nil];
-	NXPing();			//synchronize with server
+	//NXPing();			//synchronize with server
 }
 
 - (void)removeTE
 {
 	if (runningTE) {
-		DPSRemoveTimedEntry(runningTE);
-		runningTE = 0;				/* have to actually remove it */
+		[runningTE invalidate];
+		runningTE = nil;				/* have to actually remove it */
 	}
 }
 
@@ -499,14 +494,11 @@ void swap( char *v[], int i, int j)
 {
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	NSWorkspace *ws = [NSWorkspace sharedWorkspace];
-	char subject[256];
-	char body[4096] = "";
 
 #define call(a,b) [s performRemoteMethod:a with:b length:strlen(b)+1]
 
-	id 	s = nil;//[NSApp appSpeaker];
 	NSInteger x = 1;
-	int doit = NO;
+	BOOL doit = NO;
 	
 	NSString *tmpstr = [defaults stringForKey:@"Mail"];
 			
@@ -536,8 +528,7 @@ NeXTMail. Are you sure you want to do this?",
 	}
 	
 	
-    //NXPortFromName("Mail", NULL); // make sure app is launched
-	[ws launchApplication:@"Mail"];
+	[ws launchApplication:@"Mail"]; // make sure app is launched
 	MailApplication *mail = [SBApplication applicationWithBundleIdentifier:@"com.apple.Mail"];
 	
 	/* set ourself as the delegate to receive any errors */
@@ -552,10 +543,6 @@ NeXTMail. Are you sure you want to do this?",
 	
 	/* add the object to the mail app  */
 	[[mail outgoingMessages] addObject: emailMessage];
-	
-	sprintf(body, "Well, here is my Feedback:\n\n");
-
-    //[[NSApp appSpeaker] setSendPort:NXPortFromName("MailSendDemo", NULL)];
 	
 	MailToRecipient *theRecipient = [[[mail classForScriptingClass:@"to recipient"] alloc] initWithProperties:
 									 [NSDictionary dictionaryWithObjectsAndKeys:
@@ -579,8 +566,6 @@ NeXTMail. Are you sure you want to do this?",
 - (void)dealloc
 {
 	[self removeTE];
-	if(filename) {
-	}
 }
 
 /* this and the next method are for opening files directly from the Workspace

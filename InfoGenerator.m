@@ -5,23 +5,15 @@
  */
 
 #import "InfoGenerator.h"
+#import "InfoLifeView.h"
 
 @implementation InfoGenerator
+@synthesize panel;
+@synthesize window;
 
-- window
-{
-	return window;
-}
-
-- panel
-{
-	return panel;
-}
-
-- resetSpeed:(float)aSpeed
+- (void)resetSpeed:(float)aSpeed
 {
 	speed = aSpeed;
-	return self;
 }
 
 @end

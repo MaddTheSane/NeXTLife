@@ -7,6 +7,8 @@
 
 #import "LifeView.h"
 
+#define NX_LTGRAY 0.66
+
 @implementation LifeView
 @synthesize populationSize = popSize;
 @synthesize lifeChar = theLifeChar;
@@ -31,21 +33,22 @@
 - (instancetype)initWithFrame:(NSRect)frameRect
 {
 	if (self = [super initWithFrame:frameRect]) {
+		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 		int i;
 		
 		zoomSize = 1.5;		/* init zoom Size */
 		
 		if(population) free(population);
-		universe.height = atoi(NXGetDefaultValue("LifeByGR","UniverseHeight"));
-		universe.width  = atoi(NXGetDefaultValue("LifeByGR","UniverseWidth"));
+		universe.height = (int)[defaults integerForKey:@"UniverseHeight"];
+		universe.width  = (int)[defaults integerForKey:@"UniverseWidth"];
 		population = malloc(sizeof(char)*universe.height*universe.width);
 		for (i = 0; i<universe.width*universe.height; i++) {
 			population[i] = 0;
 		}
 		
 		/* set the life form symbol. */
-		theLifeChar = 'a' + atoi(NXGetDefaultValue("LifeByGR","LifeSymbol"));
-		self = [super initWithFrame:frameRect];
+		theLifeChar = 'a' + [defaults integerForKey:@"LifeSymbol"];
+		
 		[self sizeTo:(float)(FONT_SIZE*universe.width)
 					:(float)(FONT_SIZE*universe.height) ];
 		[self setDrawSize:(float)universe.width :(float)universe.height];
@@ -63,18 +66,18 @@
 - (void)resetFrame
 {
 	NSRect	obounds = [self bounds];
+	[self convertRect:obounds toView:[self superview]];
 	
-	[self convertRectToSuperview:&obounds];
 	[self sizeTo:(float)(zoomSize*universe.width*FONT_SIZE)
 							:(float)(zoomSize*universe.height*FONT_SIZE)];
 	[self setDrawSize:(float)universe.width :(float)universe.height];
 	[self setDrawOrigin:-0.5 :-0.5];
-	[self convertRectFromSuperview:&obounds];
+	[self convertRect:obounds fromView:[self superview]];
 	[self setNeedsDisplay:YES];
 }
 
 /* doesn't work and not used..., yet */
-- (void)setScrollersTo:(float)aFloat
+- (void)setScrollersTo:(CGFloat)aFloat
 {
 	id theScrollview = [[self superview] superview];
 	
@@ -108,7 +111,6 @@
 	PSWDefineFont("LifeFont",1.0);			/* Get the special font */
 	
 	[[NSColor whiteColor] set];
-	PSsetgray(NX_WHITE);
 	NSRectFill(_bounds);			/* for the white background */
 	
 	/* draw the Grid, if gridOn */
@@ -174,14 +176,12 @@
 	 printf("\n");
 	 */
 	/* Now we draw, at last */
-	PSsetgray(NX_BLACK);
+	[[NSColor blackColor] set];
 	PSWXYShow( firstX, firstY, charString, xyPositions, 2*popSize);
 	[popSizeField setIntValue:popSize];
 	/* free old stuff */
 	free(xyPositions);
 	free(charString);
-	
-	return self;
 }
 
 /* display this population (gets called by generators...) */
@@ -228,9 +228,11 @@
 	universe.width  = aUniverse.width;
 	universe.height = aUniverse.height;
 
+	//self.fr
 	[self sizeTo:(float)(FONT_SIZE*universe.width) 	
 								:(float)(FONT_SIZE*universe.height) ];
-	[self setDrawSize:(float)universe.width :(float)universe.height];
+	[self setBoundsSize:NSMakeSize(universe.width, universe.height)];
+	//[self setDrawSize:(float)universe.width :(float)universe.height];
 	[self setDrawOrigin:-0.5 :-0.5];
 }
 
@@ -245,9 +247,9 @@
 - (void)mouseDown:(NSEvent *)theEvent
 {
 	int tmp;
-	NXPoint center = theEvent->location;		/* get mouse location 		*/
+	NSPoint center = theEvent.locationInWindow;		/* get mouse location 		*/
 
-	[self convertPoint:&center fromView:nil];	/* convert to view coords 	*/
+	center = [self convertPoint:center fromView:nil];	/* convert to view coords 	*/
 	tmp = ((int)(center.y+0.5)) * universe.height + ((int) (center.x+0.5));
 	if(population[tmp] == 10) {
 		population[tmp] = 0;
