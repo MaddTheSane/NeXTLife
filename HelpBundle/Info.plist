@@ -20,9 +20,9 @@
 	<string>hbwr</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>HPDBookAccessPath</key>
+	<string>redirect.html</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2015 C.W. Betts. All rights reserved.</string>
-	<key>NSPrincipalClass</key>
-	<string></string>
 </dict>
 </plist>
