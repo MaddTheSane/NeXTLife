@@ -106,20 +106,20 @@ DQ
         <window title="Holding Place" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" backingType="nonretained" animationBehavior="default" id="28" userLabel="Panel" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="443" y="122" width="267" height="388"/>
+            <rect key="contentRect" x="443" y="122" width="267" height="384"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
             <view key="contentView" id="4">
-                <rect key="frame" x="0.0" y="0.0" width="267" height="388"/>
+                <rect key="frame" x="0.0" y="0.0" width="267" height="384"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <box toolTip="gaussian" title="Gaussian" translatesAutoresizingMaskIntoConstraints="NO" id="37">
-                        <rect key="frame" x="16" y="148" width="237" height="101"/>
+                        <rect key="frame" x="16" y="144" width="237" height="101"/>
                         <view key="contentView" id="0k3-Zp-9fF">
-                            <rect key="frame" x="2" y="2" width="233" height="83"/>
+                            <rect key="frame" x="2" y="2" width="233" height="81"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="38">
-                                    <rect key="frame" x="176" y="14" width="32" height="22"/>
+                                    <rect key="frame" x="176" y="12" width="32" height="22"/>
                                     <textFieldCell key="cell" selectable="YES" editable="YES" state="on" borderStyle="bezel" alignment="right" title="10" drawsBackground="YES" id="77">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -130,7 +130,7 @@ DQ
                                     </connections>
                                 </textField>
                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="27">
-                                    <rect key="frame" x="210" y="16" width="19" height="17"/>
+                                    <rect key="frame" x="210" y="14" width="19" height="17"/>
                                     <textFieldCell key="cell" alignment="left" title="%" id="79">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -138,7 +138,7 @@ DQ
                                     </textFieldCell>
                                 </textField>
                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="36">
-                                    <rect key="frame" x="176" y="46" width="32" height="22"/>
+                                    <rect key="frame" x="176" y="44" width="32" height="22"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="32" id="V1k-83-BTT"/>
                                     </constraints>
@@ -149,7 +149,7 @@ DQ
                                     </textFieldCell>
                                 </textField>
                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="10">
-                                    <rect key="frame" x="120" y="48" width="55" height="17"/>
+                                    <rect key="frame" x="120" y="46" width="55" height="17"/>
                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" alignment="right" title="Width:" id="81">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -157,7 +157,7 @@ DQ
                                     </textFieldCell>
                                 </textField>
                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="35">
-                                    <rect key="frame" x="210" y="48" width="18" height="17"/>
+                                    <rect key="frame" x="210" y="46" width="18" height="17"/>
                                     <textFieldCell key="cell" alignment="left" title="%" id="82">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -165,14 +165,14 @@ DQ
                                     </textFieldCell>
                                 </textField>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="23">
-                                    <rect key="frame" x="5" y="5" width="113" height="78"/>
+                                    <rect key="frame" x="5" y="5" width="113" height="76"/>
                                     <buttonCell key="cell" type="bevel" title="Cell" image="Gaussian" imagePosition="only" alignment="center" enabled="NO" imageScaling="proportionallyDown" inset="2" id="83">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="cellTitle"/>
                                     </buttonCell>
                                 </button>
                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="15">
-                                    <rect key="frame" x="121" y="16" width="54" height="17"/>
+                                    <rect key="frame" x="121" y="14" width="54" height="17"/>
                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" alignment="right" title="Density:" id="78">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -210,16 +210,16 @@ DQ
                         </constraints>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <font key="titleFont" size="12" name="Helvetica"/>
+                        <font key="titleFont" metaFont="system"/>
                     </box>
                     <box toolTip="isotropic" title="Isotropic" translatesAutoresizingMaskIntoConstraints="NO" id="24">
-                        <rect key="frame" x="16" y="268" width="237" height="101"/>
+                        <rect key="frame" x="16" y="264" width="237" height="101"/>
                         <view key="contentView" id="zjM-T6-bVy">
-                            <rect key="frame" x="2" y="2" width="233" height="83"/>
+                            <rect key="frame" x="2" y="2" width="233" height="81"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="18">
-                                    <rect key="frame" x="176" y="39" width="33" height="22"/>
+                                    <rect key="frame" x="176" y="37" width="33" height="22"/>
                                     <textFieldCell key="cell" selectable="YES" editable="YES" state="on" borderStyle="bezel" alignment="right" title="10" drawsBackground="YES" id="66">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -230,7 +230,7 @@ DQ
                                     </connections>
                                 </textField>
                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="16">
-                                    <rect key="frame" x="121" y="41" width="54" height="18"/>
+                                    <rect key="frame" x="121" y="39" width="54" height="18"/>
                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" alignment="right" title="Density:" id="67">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -238,7 +238,7 @@ DQ
                                     </textFieldCell>
                                 </textField>
                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="13">
-                                    <rect key="frame" x="211" y="41" width="18" height="17"/>
+                                    <rect key="frame" x="211" y="39" width="18" height="17"/>
                                     <textFieldCell key="cell" alignment="left" title="%" id="68">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -246,7 +246,7 @@ DQ
                                     </textFieldCell>
                                 </textField>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="22">
-                                    <rect key="frame" x="5" y="5" width="115" height="78"/>
+                                    <rect key="frame" x="5" y="5" width="115" height="76"/>
                                     <buttonCell key="cell" type="bevel" title="Cell" image="Isotropic" imagePosition="only" alignment="center" enabled="NO" imageScaling="proportionallyDown" inset="2" id="69">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="cellTitle"/>
@@ -274,16 +274,16 @@ DQ
                         </constraints>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <font key="titleFont" size="12" name="Helvetica"/>
+                        <font key="titleFont" metaFont="system"/>
                     </box>
                     <box toolTip="stepDist" title="Step" translatesAutoresizingMaskIntoConstraints="NO" id="29">
-                        <rect key="frame" x="16" y="20" width="237" height="101"/>
+                        <rect key="frame" x="16" y="16" width="237" height="101"/>
                         <view key="contentView" id="dWF-0z-9gr">
-                            <rect key="frame" x="2" y="2" width="233" height="83"/>
+                            <rect key="frame" x="2" y="2" width="233" height="81"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="3">
-                                    <rect key="frame" x="176" y="15" width="32" height="22"/>
+                                    <rect key="frame" x="176" y="13" width="32" height="22"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="32" id="o3y-Y3-bjx"/>
                                     </constraints>
@@ -297,7 +297,7 @@ DQ
                                     </connections>
                                 </textField>
                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="26">
-                                    <rect key="frame" x="210" y="17" width="19" height="17"/>
+                                    <rect key="frame" x="210" y="15" width="19" height="17"/>
                                     <textFieldCell key="cell" alignment="left" title="%" id="71">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -305,7 +305,7 @@ DQ
                                     </textFieldCell>
                                 </textField>
                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="19">
-                                    <rect key="frame" x="210" y="48" width="18" height="17"/>
+                                    <rect key="frame" x="210" y="46" width="18" height="17"/>
                                     <textFieldCell key="cell" alignment="left" title="%" id="74">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -313,14 +313,14 @@ DQ
                                     </textFieldCell>
                                 </textField>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="6">
-                                    <rect key="frame" x="5" y="3" width="126" height="80"/>
+                                    <rect key="frame" x="5" y="1" width="126" height="80"/>
                                     <buttonCell key="cell" type="bevel" title="Cell" image="Step" imagePosition="only" alignment="center" enabled="NO" imageScaling="proportionallyDown" inset="2" id="75">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="cellTitle"/>
                                     </buttonCell>
                                 </button>
                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="11">
-                                    <rect key="frame" x="176" y="46" width="32" height="22"/>
+                                    <rect key="frame" x="176" y="44" width="32" height="22"/>
                                     <textFieldCell key="cell" selectable="YES" editable="YES" state="on" borderStyle="bezel" alignment="right" title="20" drawsBackground="YES" id="72">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -328,7 +328,7 @@ DQ
                                     </textFieldCell>
                                 </textField>
                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="32">
-                                    <rect key="frame" x="127" y="48" width="48" height="17"/>
+                                    <rect key="frame" x="127" y="46" width="48" height="17"/>
                                     <textFieldCell key="cell" alignment="center" title="Width:" id="73">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -336,7 +336,7 @@ DQ
                                     </textFieldCell>
                                 </textField>
                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="34">
-                                    <rect key="frame" x="117" y="17" width="58" height="17"/>
+                                    <rect key="frame" x="117" y="15" width="58" height="17"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" alignment="center" title="Density:" id="76">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -371,11 +371,12 @@ DQ
                         </constraints>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <font key="titleFont" size="12" name="Helvetica"/>
+                        <font key="titleFont" metaFont="system"/>
                     </box>
                 </subviews>
                 <constraints>
                     <constraint firstItem="37" firstAttribute="top" secondItem="24" secondAttribute="bottom" constant="23" id="3IY-ZQ-gOV"/>
+                    <constraint firstAttribute="bottom" secondItem="29" secondAttribute="bottom" priority="250" constant="20" symbolic="YES" id="HuN-Hz-QLL"/>
                     <constraint firstItem="24" firstAttribute="top" secondItem="4" secondAttribute="top" constant="19" id="Peb-Tk-c2O"/>
                     <constraint firstItem="37" firstAttribute="leading" secondItem="29" secondAttribute="leading" id="XeA-JL-LxL"/>
                     <constraint firstItem="24" firstAttribute="leading" secondItem="4" secondAttribute="leading" constant="19" id="nkO-S3-Z1e"/>

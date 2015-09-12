@@ -3,6 +3,8 @@
 
 #import "Generator.h"
 #import "InfoGenerator.h"
+#import "PrefController.h"
+#import "RandomGenerator.h"
 #import <ScriptingBridge/ScriptingBridge.h>
 #import "Mail.h"
 
@@ -154,9 +156,6 @@ void swap( char *v[], int i, int j)
 		file = [filename lastPathComponent];
 		if (file) {
 			dir = filename;
-			file = nil;
-			//*file = 0;
-			//file++;
 		} else {
 			dir = [filename stringByDeletingLastPathComponent];
 			file = [filenameField stringValue];

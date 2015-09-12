@@ -7,6 +7,8 @@
 #import <Cocoa/Cocoa.h>
 #import "LifeView.h"
 @class InfoGenerator;
+@class PrefController;
+@class RandomGenerator;
 
 #define VERSION_STRING "Version 1.0a"
 
@@ -15,10 +17,10 @@
     IBOutlet id		generationField;
     IBOutlet NSButton		*runButton;			//we need to change the icon
     IBOutlet id		runMenuButton;		//we need to change title
-	IBOutlet id		filenameField;
-	IBOutlet id		prefController;		//handles on prefcontroller
+	IBOutlet NSTextField	*filenameField;
+	IBOutlet PrefController	*prefController;		//handles on prefcontroller
 	IBOutlet InfoGenerator		*infoGenerator;		//  and info controller
-	IBOutlet id		randomGenerator;	//  and random generator
+	IBOutlet RandomGenerator	*randomGenerator;	//  and random generator
 	IBOutlet NSMenu			*samplesMenu;		//The samples submenu
 	BOOL	running;			//Are we animating?
 	NSString	*filename;			//The file loaded...
