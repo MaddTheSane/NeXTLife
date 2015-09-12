@@ -17,8 +17,8 @@
 	IBOutlet NSTextField	*isoPercentField;	//Isotropic view density TextField
 	IBOutlet NSTextField	*gaussPercentField;	//Gaussian view density TextField
 	IBOutlet NSTextField	*gaussWidthField;	//Gaussian View width TextField
-	IBOutlet id	stepDensityField;	//Step Distribution view density TextField
-	IBOutlet id	stepWidthField;		//Step Dist. width TextField
+	IBOutlet NSTextField	*stepDensityField;	//Step Distribution view density TextField
+	IBOutlet NSTextField	*stepWidthField;		//Step Dist. width TextField
 	IBOutlet NSWindow *window;				//The window that get displayed
 	IBOutlet Generator	*theGenerator;		//A pointer the the main generator so we can apply
 	IBOutlet LifeView	*lifeView;			//The lifeView in the main generator

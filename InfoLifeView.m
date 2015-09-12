@@ -113,11 +113,6 @@
 {
 }
 
-- window
-{
-	return [self window];
-}
-
 - (void)dealloc
 {
 	if (population) {

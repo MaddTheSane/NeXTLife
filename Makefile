@@ -23,8 +23,8 @@ LOCAL_RESOURCES = InfoPanel.nib Life.nib Preferences.nib Random.nib\
                   Help
 
 GLOBAL_RESOURCES = CLear.tiff Isotropic.tiff life.doc.tiff life.tiff\
-                   run.tiff step.tiff Step.tiff stop.tiff Info.life\
-                   LifeSamples
+                   run.tiff Step.tiff StepForward.tiff stop.tiff\
+                   Info.life LifeSamples
 
 CLASSES = Generator.m InfoGenerator.m InfoLifeView.m LifeView.m\
           PrefController.m RandomGenerator.m

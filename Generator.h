@@ -9,6 +9,7 @@
 
 @class InfoGenerator;
 @class RandomGenerator;
+@class PrefController;
 
 #define VERSION_STRING "Version 1.0b"
 
@@ -17,12 +18,12 @@
 	IBOutlet NSTextField   	*generationField;
 	IBOutlet LifeView      	*lifeView;
 	IBOutlet NSButton      	*runButton;			//we need to change the icon
-	IBOutlet id		runMenuButton;		//we need to change title
+	IBOutlet NSMenuItem 	*runMenuButton;		//we need to change title
 	IBOutlet NSTextField   	*filenameField;
-	IBOutlet id		prefController;		//handles on prefcontroller
+	IBOutlet PrefController	*prefController;		//handles on prefcontroller
 	IBOutlet InfoGenerator 	*infoGenerator;		//  and info controller
 	IBOutlet RandomGenerator *randomGenerator;	//  and random generator
-	IBOutlet id		samplesMenu;		//The samples submenu
+	IBOutlet NSMenu		*samplesMenu;		//The samples submenu
 	BOOL	running;			//Are we animating?
 	NSString	*filename;			//The file loaded...
 	NSTimer	*runningTE;	//For animation

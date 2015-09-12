@@ -16,16 +16,16 @@ typedef struct _IntNXSize {		//An integer NXSize (for universe size)
 
 @interface LifeView: NSView
 {
-	IBOutlet id		zoomField;					// text field for zoom value 
+	IBOutlet NSSlider   	*zoomField;					// text field for zoom value 
 	float	zoomSize;
-	IBOutlet id		gridButton;					// the 'Show Grid' menu button  
+	IBOutlet NSMenuItem	*gridButton;					// the 'Show Grid' menu button  
 										// we need to change it's title 
 	char 	*population;    			// draw this population.
 	int		popSize;					// how many?
 	BOOL	gridOn;						// decide if grid is shown.	
 	char	theLifeChar;				// the special char used 
-	IBOutlet id		popSizeField;
-	IBOutlet id		cursor;
+	IBOutlet NSTextField   	*popSizeField;
+	//IBOutlet id		cursor;
 	IntNXSize	universe;				// the play field size 
 }
 

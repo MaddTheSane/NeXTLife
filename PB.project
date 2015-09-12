@@ -24,8 +24,8 @@
             life.doc.tiff, 
             life.tiff, 
             run.tiff, 
-            step.tiff, 
             Step.tiff, 
+            StepForward.tiff, 
             stop.tiff
         ); 
         INTERFACES = (InfoPanel.nib, Life.nib, Preferences.nib, Random.nib); 

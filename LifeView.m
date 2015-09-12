@@ -11,12 +11,12 @@
 
 + (void)initialize
 {
-	NSDictionary *defaults = [[NSDictionary alloc] initWithObjectsAndKeys: [NSNumber numberWithInt:120], @"UnverseHeight", [NSNumber numberWithInt:120], @"UnverseWidth", [NSNumber numberWithInt:0], @"LifeSymbol", "Warn", "Mail"];
+	NSDictionary *defaults = [[NSDictionary alloc] initWithObjectsAndKeys: [NSNumber numberWithInt:120], @"UnverseHeight", [NSNumber numberWithInt:120], @"UnverseWidth", [NSNumber numberWithInt:0], @"LifeSymbol", @"Warn", @"Mail", nil];
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 	[defaults release];
 }
 
-- initWithFrame:(NSRect)frameRect
+- (id)initWithFrame:(NSRect)frameRect
 {
 	int i;
 	NSUserDefaults *defaults;
@@ -72,7 +72,7 @@
 }
 
 
-- (IBAction)showGrid:sender
+- (IBAction)showGrid:(id)sender
 {
 	if(!gridOn) {
 		gridOn = YES;
@@ -87,7 +87,7 @@
 #define NX_LTGRAY (2.0 / 3.0)
 #define NX_BLACK 0
 /* the drawing method. Note the fancy zyshow! */
-- (void)drawRect:(NSRect)dirtyRect;
+- (void)drawRect:(NSRect)dirtyRect
 {
 	float	oldX = 0.0, oldY = 0.0;			/* Hold the last full one */
 	float 	*xyPositions;					/* pairs of positions...	  */
@@ -248,7 +248,7 @@
 	[self resetFrame];
 }
 
-- (IBAction)takeFloatSize:sender
+- (IBAction)takeFloatSize:(id)sender
 {
 	[self setZoom:[sender floatValue] ];
 }

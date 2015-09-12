@@ -2,6 +2,7 @@
 #import "Generator.h"
 #import "InfoGenerator.h"
 #import "RandomGenerator.h"
+#import "PrefController.h"
 #include <sys/types.h>
 #include <sys/dir.h>
 

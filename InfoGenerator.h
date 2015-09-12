@@ -12,7 +12,7 @@
 @interface InfoGenerator: Generator
 {
 	IBOutlet InfoLifeView	*infoLifeView;
-	IBOutlet id	panel;
+	IBOutlet NSPanel	*panel;
 	IBOutlet NSWindow *window;
 }
 
