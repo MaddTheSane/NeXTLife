@@ -1,49 +1,37 @@
-Generator = {
+"FirstResponder" = {ACTIONS = {}; OUTLETS = {}; SUPERCLASS = NSObject; };
+"Generator" = {
     ACTIONS = {
-	appWillTerminate:;
-	save:;
-	startRandomTool:;
-	loadSample:;
-	saveAs:;
-	clear:;
-	showLegal:;
-	runStop:;
-	step:;
-	setSpeed:;
-	load:;
-	revertToSaved:;
-	suggestion:;
-	showPrefs:;
-	showInfo:;
-    };
+        "appWillTerminate:" = id; 
+        "clear:" = id; 
+        "load:" = id; 
+        "loadSample:" = id; 
+        "revertToSaved:" = id; 
+        "runStop:" = id; 
+        "save:" = id; 
+        "saveAs:" = id; 
+        "setSpeed:" = id; 
+        "showInfo:" = id; 
+        "showLegal:" = id; 
+        "showPrefs:" = id; 
+        "startRandomTool:" = id; 
+        "step:" = id; 
+        "suggestion:" = id; 
+    }; 
     OUTLETS = {
-	prefController;
-	lifeView;
-	samplesMenu;
-	generationField;
-	infoGenerator;
-	runButton;
-	randomGenerator;
-	filenameField;
-	runMenuButton;
-    };
-    SUPERCLASS = Object;
+        filenameField = id; 
+        generationField = id; 
+        infoGenerator = id; 
+        lifeView = id; 
+        prefController = id; 
+        randomGenerator = id; 
+        runButton = id; 
+        runMenuButton = id; 
+        samplesMenu = id; 
+    }; 
+    SUPERCLASS = NSObject; 
 };
-FirstResponder = {
-    ACTIONS = {
-    };
-    SUPERCLASS = Object;
-};
-LifeView = {
-    ACTIONS = {
-	takeFloatSize:;
-	setLifeChar:;
-	showGrid:;
-    };
-    OUTLETS = {
-	popSizeField;
-	gridButton;
-	zoomField;
-    };
-    SUPERCLASS = View;
+"LifeView" = {
+    ACTIONS = {"setLifeChar:" = id; "showGrid:" = id; "takeFloatSize:" = id; }; 
+    OUTLETS = {gridButton = id; popSizeField = id; zoomField = id; }; 
+    SUPERCLASS = NSView; 
 };

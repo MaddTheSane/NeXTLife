@@ -18,10 +18,9 @@
 	return panel;
 }
 
-- resetSpeed:(float)aSpeed
+- (void)resetSpeed:(float)aSpeed
 {
 	speed = aSpeed;
-	return self;
 }
 
 @end

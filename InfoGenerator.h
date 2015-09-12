@@ -4,19 +4,20 @@
  * Copyright (c) 1993 Gil Rivlis
  */
 
-#import <appkit/appkit.h>
+#import <AppKit/AppKit.h>
 
 #import "Generator.h"
+@class InfoLifeView;
 
-@interface InfoGenerator:Generator
+@interface InfoGenerator: Generator
 {
-    id	infoLifeView;
-    id	panel;
-    id	window;
+	IBOutlet InfoLifeView	*infoLifeView;
+	IBOutlet id	panel;
+	IBOutlet NSWindow *window;
 }
 
-- window;
-- panel;
-- resetSpeed:(float)aSpeed;
+- (NSWindow*)window;
+- (id)panel;
+- (void)resetSpeed:(float)aSpeed;
 
 @end

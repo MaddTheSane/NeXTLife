@@ -9,11 +9,15 @@
 
 NAME = Life
 
-PROJECTVERSION = 1.1
+PROJECTVERSION = 2.6
+PROJECT_TYPE = Application
 LANGUAGE = English
 
-APPICON = life.tiff
-DOCICONS = life.doc.tiff
+NEXTSTEP_APPICON = life.tiff
+NEXTSTEP_DOCICONS = life.doc.tiff
+
+ICONSECTIONS =	-sectcreate __ICON app life.tiff \
+		-sectcreate __ICON life.doc life.doc.tiff
 
 LOCAL_RESOURCES = InfoPanel.nib Life.nib Preferences.nib Random.nib\
                   Help
@@ -35,19 +39,21 @@ PSWFILES = LifeChar.psw
 OTHERSRCS = Makefile.preamble Makefile Makefile.postamble
 
 
-MAKEFILEDIR = /NextDeveloper/Makefiles/app
+MAKEFILEDIR = $(NEXT_ROOT)/NextDeveloper/Makefiles/pb_makefiles
+CODE_GEN_STYLE = DYNAMIC
 MAKEFILE = app.make
-INSTALLDIR = $(HOME)/Apps
-INSTALLFLAGS = -c -s -m 755
-SOURCEMODE = 444
-
-ICONSECTIONS =	-sectcreate __ICON app life.tiff \
-		-sectcreate __ICON life.doc life.doc.tiff
-
-LIBS = -lMedia_s -lNeXT_s -lIndexing_s
+NEXTSTEP_INSTALLDIR = $(HOME)/Apps
+WINDOWS_INSTALLDIR = $(HOME)/Apps
+PDO_UNIX_INSTALLDIR = $(HOME)/Apps
+LIBS = 
 DEBUG_LIBS = $(LIBS)
 PROF_LIBS = $(LIBS)
 
+
+FRAMEWORKS = -framework Foundation -framework AppKit
+
+
+include $(MAKEFILEDIR)/platform.make
 
 -include Makefile.preamble
 

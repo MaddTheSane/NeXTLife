@@ -13,22 +13,22 @@
 
 @implementation PrefController
 
-- awakeFromNib
+- (void)awakeFromNib
 {
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	whichOne = SIZE_PREF;
 	
 	/* get the default universe size and display in the appropriate fields */
 	[universeHeightField
-		setIntValue:(atoi(NXGetDefaultValue("LifeByGR","UniverseHeight")))];
+                setIntValue:[defaults integerForKey:@"UniverseHeight"]];
 	[universeWidthField
-		setIntValue:(atoi(NXGetDefaultValue("LifeByGR","UniverseWidth")))];
+                setIntValue:[defaults integerForKey:@"UniverseWidth"]];
 	
 	/* get the default shape and selcted the appropriate button */
 	[shapeMatrix selectCellWithTag:((int)([[theGenerator lifeView] lifeChar]) 
 					- (int)('a'))];
 	
 	[self setToView:[sizeView contentView] ];
-	return self;
 }
 
 - window
@@ -37,24 +37,22 @@
 }
 
 /* see RandomGenerator */
-- setToView:theView
+- (void)setToView:(NSBox*)theView
 {
-	NXRect	boxRect, viewRect;
-	
-	[multiView getFrame:&boxRect];
-	[theView getFrame:&viewRect];
-	
+	NSRect	boxRect, viewRect;
+	boxRect = [multiView frame];
+	viewRect = [theView frame];
+		
 	[multiView setContentView:theView];
-	NX_X(&viewRect) = (NX_WIDTH(&boxRect)-NX_WIDTH(&viewRect)) / 2.0;
-	NX_Y(&viewRect) = (NX_HEIGHT(&boxRect)-NX_HEIGHT(&viewRect)) / 2.0;
-	
-	[theView setFrame:&viewRect];
-	[multiView display];
-	return self;
+	viewRect.origin.x = (boxRect.size.width - viewRect.size.width) / 2.0;
+	viewRect.origin.y = (boxRect.size.height - viewRect.size.height) / 2.0;
+
+	[theView setFrame:viewRect];
+	[multiView setNeedsDisplay:YES];
 }
 
 /* see Random Generator */
-- setPrefView:sender
+- (IBAction)setPrefView:sender
 {
 	id newView = nil;
 	whichOne = [[sender selectedCell] tag];
@@ -67,45 +65,21 @@
 				break;
 	}
 	[self setToView:newView];
-	return self;
 }
 
 /* saves the new preferences in the default database */
-- save:sender
+- (IBAction)save:sender
 {
-	char 	buf[256];
-	static NXDefaultsVector newDefaults = {
-		{"UniverseHeight",""},		/* 0 */
-		{"UniverseWidth", ""},		/* 1 */
-		{"Mail", ""},				/* 2 */
-		{"LifeSymbol", ""},			/* 3 */
-		{NULL, NULL}
-	};
-	
-	sprintf(buf,"%d",[universeHeightField intValue]);
-	newDefaults[0].value = alloca(256);
-	strcpy(newDefaults[0].value,buf);
-	
-	sprintf(buf,"%d",[universeWidthField intValue]);
-	newDefaults[1].value = alloca(256);
-	strcpy(newDefaults[1].value,buf);
-	
-	sprintf(buf,"%s", NXGetDefaultValue("LifeByGR","Mail"));
-	newDefaults[2].value = alloca(256);
-	strcpy(newDefaults[2].value,buf);
-	
-	sprintf(buf,"%d", [[shapeMatrix selectedCell] tag]);
-	newDefaults[3].value = alloca(256);
-	strcpy(newDefaults[3].value,buf);
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
-	
-	NXWriteDefaults("LifeByGR", newDefaults);
-
-    return self;
+	[defaults setInteger: [universeHeightField intValue] forKey: @"UniverseHeight"];
+	[defaults setInteger: [universeWidthField intValue] forKey: @"UniverseWidth"];
+	[defaults setInteger: [[shapeMatrix selectedCell] tag] forKey: @"LifeSymbol"];
+	[defaults synchronize];
 }
 
 /* if we want to actually use it in the current game */
-- useNow:sender
+- (IBAction)useNow:sender
 {
 	IntNXSize newSize;
 	id theLifeView = [theGenerator lifeView];
@@ -117,13 +91,11 @@
 				[theGenerator resetSizeTo:newSize];
 				break;
 		case SHAPE_PREF:
-				[ theLifeView setLifeCharTo:'a'
+				[ theLifeView setLifeChar:'a'
 							+[[shapeMatrix selectedCell] tag] ];
 				[ theLifeView display];
 				break;
 	}
-	
-	return self;
 }
 
 @end

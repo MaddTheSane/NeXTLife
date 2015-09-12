@@ -1,31 +1,64 @@
-INSTALLDIR = "$(HOME)/Apps";
-APPICON = life.tiff;
-GENERATEMAIN = YES;
-DOCICONFILES = (life.doc.tiff);
-FILESTABLE = {
-    OTHER_LIBS = (Media_s, NeXT_s, Indexing_s);
-    PSW_FILES = (LifeChar.psw);
-    CLASSES = (Generator.m, InfoGenerator.m, InfoLifeView.m, LifeView.m, PrefController.m, RandomGenerator.m);
-    OTHER_RESOURCES = (Info.life, LifeSamples, Help);
-    OTHER_SOURCES = (Makefile.preamble, Makefile, Makefile.postamble);
-    INTERFACES = (InfoPanel.nib, Life.nib, Preferences.nib, Random.nib);
-    H_FILES = (Generator.h, InfoGenerator.h, InfoLifeView.h, LifeView.h, PrefController.h, RandomGenerator.h);
-    IMAGES = (CLear.tiff, Isotropic.tiff, life.doc.tiff, life.tiff, run.tiff, step.tiff, Step.tiff, stop.tiff);
-    OTHER_LINKED = ();
-    M_FILES = (Life_main.m);
-};
-APPCLASS = Application;
-MAINNIB = Life;
-DOCEXTENSIONS = (life);
-PROJECTTYPE = Application;
-PROJECTVERSION = 1.1;
-LOCALIZABLE_FILES = {
-    Help;
-    Life.nib;
-    Random.nib;
-    Preferences.nib;
-    InfoPanel.nib;
-};
-PROJECTNAME = Life;
-SYSTEMEXTENSIONS = ();
-LANGUAGE = English;
+{
+    APPCLASS = NSApplication; 
+    FILESTABLE = {
+        CLASSES = (
+            Generator.m, 
+            InfoGenerator.m, 
+            InfoLifeView.m, 
+            LifeView.m, 
+            PrefController.m, 
+            RandomGenerator.m
+        ); 
+        FRAMEWORKS = (Foundation.framework, AppKit.framework); 
+        H_FILES = (
+            Generator.h, 
+            InfoGenerator.h, 
+            InfoLifeView.h, 
+            LifeView.h, 
+            PrefController.h, 
+            RandomGenerator.h
+        ); 
+        IMAGES = (
+            CLear.tiff, 
+            Isotropic.tiff, 
+            life.doc.tiff, 
+            life.tiff, 
+            run.tiff, 
+            step.tiff, 
+            Step.tiff, 
+            stop.tiff
+        ); 
+        INTERFACES = (InfoPanel.nib, Life.nib, Preferences.nib, Random.nib); 
+        M_FILES = (); 
+        OTHER_LIBS = (); 
+        OTHER_LINKED = (LifeChar.psw, Life_main.m); 
+        OTHER_RESOURCES = (Info.life, LifeSamples, Help); 
+        OTHER_SOURCES = (Makefile.preamble, Makefile, Makefile.postamble); 
+        PSW_FILES = (); 
+    }; 
+    GENERATEMAIN = YES; 
+    LANGUAGE = English; 
+    LOCALIZABLE_FILES = {
+        Help = Help; 
+        InfoPanel.nib = InfoPanel.nib; 
+        Life.nib = Life.nib; 
+        Preferences.nib = Preferences.nib; 
+        Random.nib = Random.nib; 
+    }; 
+    MAKEFILEDIR = "$(NEXT_ROOT)/NextDeveloper/Makefiles/pb_makefiles"; 
+    NEXTSTEP_APPICON = life.tiff; 
+    NEXTSTEP_BUILDTOOL = /bin/gnumake; 
+    NEXTSTEP_DOCUMENTEXTENSIONS = ({Extension = life; Image = life.doc.tiff; }); 
+    NEXTSTEP_HELPFILE = Help; 
+    NEXTSTEP_INSTALLDIR = "$(HOME)/Apps"; 
+    NEXTSTEP_MAINNIB = Life; 
+    PDO_UNIX_INSTALLDIR = "$(HOME)/Apps"; 
+    PDO_UNIX_MAINNIB = Life; 
+    PROJECTNAME = Life; 
+    PROJECTTYPE = Application; 
+    PROJECTVERSION = 2.6; 
+    SYSTEMEXTENSIONS = (); 
+    TARGETS = (Life); 
+    WINDOWS_INSTALLDIR = "$(HOME)/Apps"; 
+    WINDOWS_MAINNIB = Life; 
+}

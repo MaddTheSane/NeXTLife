@@ -1,80 +1,60 @@
-LifeView = {
+"FirstResponder" = {ACTIONS = {}; OUTLETS = {}; SUPERCLASS = NSObject; };
+"Generator" = {
     ACTIONS = {
-	takeFloatSize:;
-	setLifeChar:;
-	showGrid:;
-    };
+        "appWillTerminate:" = id; 
+        "clear:" = id; 
+        "load:" = id; 
+        "loadSample:" = id; 
+        "revertToSaved:" = id; 
+        "runStop:" = id; 
+        "save:" = id; 
+        "saveAs:" = id; 
+        "setSpeed:" = id; 
+        "showInfo:" = id; 
+        "showLegal:" = id; 
+        "showPrefs:" = id; 
+        "startRandomTool:" = id; 
+        "step:" = id; 
+        "suggestion:" = id; 
+    }; 
     OUTLETS = {
-	popSizeField;
-	gridButton;
-	zoomField;
-	cursor;
-    };
-    SUPERCLASS = View;
+        filenameField = id; 
+        generationField = id; 
+        infoGenerator = id; 
+        lifeView = id; 
+        prefController = id; 
+        randomGenerator = id; 
+        runButton = id; 
+        runMenuButton = id; 
+        samplesMenu = id; 
+    }; 
+    SUPERCLASS = NSObject; 
 };
-FirstResponder = {
-    ACTIONS = {
-    };
-    SUPERCLASS = Object;
+"InfoController" = {
+    ACTIONS = {}; 
+    OUTLETS = {infoLifeView = id; panel = id; window = id; }; 
+    SUPERCLASS = NSObject; 
 };
-Generator = {
-    ACTIONS = {
-	startRandomTool:;
-	save:;
-	clear:;
-	loadSample:;
-	saveAs:;
-	showLegal:;
-	runStop:;
-	step:;
-	setSpeed:;
-	load:;
-	revertToSaved:;
-	showPrefs:;
-	showInfo:;
-    };
+"InfoGenerator" = {
+    ACTIONS = {}; 
+    OUTLETS = {infoLifeView = id; panel = id; window = id; }; 
+    SUPERCLASS = Generator; 
+};
+"InfoLifeView" = {
+    ACTIONS = {}; 
     OUTLETS = {
-	prefController;
-	lifeView;
-	samplesMenu;
-	generationField;
-	infoGenerator;
-	runButton;
-	randomGenerator;
-	filenameField;
-	runMenuButton;
-    };
-    SUPERCLASS = Object;
+        authorText = id; 
+        copyrightText = id; 
+        theAppButton = id; 
+        theBox = id; 
+        theTitle = id; 
+        versionText = id; 
+        window = id; 
+    }; 
+    SUPERCLASS = LifeView; 
 };
-InfoGenerator = {
-    OUTLETS = {
-	infoLifeView;
-	panel;
-	window;
-    };
-    SUPERCLASS = Generator;
-};
-InfoController = {
-    ACTIONS = {
-    };
-    OUTLETS = {
-	infoLifeView;
-	panel;
-	window;
-    };
-    SUPERCLASS = Object;
-};
-InfoLifeView = {
-    ACTIONS = {
-    };
-    OUTLETS = {
-	theBox;
-	authorText;
-	theAppButton;
-	window;
-	theTitle;
-	copyrightText;
-	versionText;
-    };
-    SUPERCLASS = LifeView;
+"LifeView" = {
+    ACTIONS = {"setLifeChar:" = id; "showGrid:" = id; "takeFloatSize:" = id; }; 
+    OUTLETS = {cursor = id; gridButton = id; popSizeField = id; zoomField = id; }; 
+    SUPERCLASS = NSView; 
 };

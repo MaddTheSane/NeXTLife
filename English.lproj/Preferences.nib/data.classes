@@ -1,49 +1,41 @@
-Generator = {
+"FirstResponder" = {ACTIONS = {}; OUTLETS = {}; SUPERCLASS = NSObject; };
+"Generator" = {
     ACTIONS = {
-	save:;
-	clear:;
-	loadSample:;
-	saveAs:;
-	runStop:;
-	step:;
-	drawRandom:;
-	setSpeed:;
-	load:;
-	revertToSaved:;
-	showPrefs:;
-	showInfo:;
-    };
+        "clear:" = id; 
+        "drawRandom:" = id; 
+        "load:" = id; 
+        "loadSample:" = id; 
+        "revertToSaved:" = id; 
+        "runStop:" = id; 
+        "save:" = id; 
+        "saveAs:" = id; 
+        "setSpeed:" = id; 
+        "showInfo:" = id; 
+        "showPrefs:" = id; 
+        "step:" = id; 
+    }; 
     OUTLETS = {
-	prefController;
-	lifeView;
-	generationField;
-	runButton;
-	filenameField;
-	runMenuButton;
-	infoPanel;
-    };
-    SUPERCLASS = Object;
+        filenameField = id; 
+        generationField = id; 
+        infoPanel = id; 
+        lifeView = id; 
+        prefController = id; 
+        runButton = id; 
+        runMenuButton = id; 
+    }; 
+    SUPERCLASS = NSObject; 
 };
-FirstResponder = {
-    ACTIONS = {
-    };
-    SUPERCLASS = Object;
-};
-PrefController = {
-    ACTIONS = {
-	useNow:;
-	save:;
-	setPrefView:;
-    };
+"PrefController" = {
+    ACTIONS = {"save:" = id; "setPrefView:" = id; "useNow:" = id; }; 
     OUTLETS = {
-	universeWidthField;
-	shapeView;
-	universeHeightField;
-	window;
-	multiView;
-	shapeMatrix;
-	theGenerator;
-	sizeView;
-    };
-    SUPERCLASS = Object;
+        multiView = id; 
+        shapeMatrix = id; 
+        shapeView = id; 
+        sizeView = id; 
+        theGenerator = id; 
+        universeHeightField = id; 
+        universeWidthField = id; 
+        window = id; 
+    }; 
+    SUPERCLASS = NSObject; 
 };

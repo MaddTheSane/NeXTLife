@@ -10,10 +10,10 @@
 
 @implementation InfoLifeView
 
-- initFrame:(NXRect *)frameRect
+- initWithFrame:(NSRect)frameRect
 {
 	int i;
-	[super initFrame:frameRect];
+	self = [super initWithFrame:frameRect];
 	if(population) free(population);
 	zoomSize = 1.5;		/* init zoom Size */
 	
@@ -23,19 +23,26 @@
 	for (i = 0; i<universe.width*universe.height; i++) {
 		population[i] = 0;
 	}
-	[super initFrame:frameRect];
-	[self sizeTo:(float)(FONT_SIZE*universe.width) 	
-							:(float)(FONT_SIZE*universe.height) ];
-	[self setDrawSize:(float)universe.width :(float)universe.height];
-	[self setDrawOrigin:-0.5 :-0.5];
-	[self setOpaque:NO];
-	return [self display];
+	[self setFrameSize: NSMakeSize(FONT_SIZE*universe.width, FONT_SIZE*universe.height)];
+	//[self sizeTo:(float)(FONT_SIZE*universe.width) 	
+	//						:(float)(FONT_SIZE*universe.height) ];
+	[self setBoundsSize: NSMakeSize(universe.width, universe.height)];
+	[self setBoundsOrigin: NSMakePoint(-0.5, -0.5)];
+	//[self setDrawSize:(float)universe.width :(float)universe.height];
+	//[self setDrawOrigin:-0.5 :-0.5];
+	//[self setOpaque:NO];
+	return self;
+}
+
+- (BOOL)isOpaque
+{
+	return NO;
 }
 
 /* overwrite drawself. We don't need grid, and we want to draw in gray. 
  * Also we need to draw the text each time on top.
  */
-- drawSelf:(const NXRect *)rects :(int)rectCount
+- (void)drawRect:(NSRect)dirtyRect
 {
 	float	oldX = 0.0, oldY = 0.0;			/* Hold the last full one */
 	float 	*xyPositions;					/* pairs of positions...	  */
@@ -78,14 +85,14 @@
 		}
 	}
 	/* Now we draw, at last */
- 	PSsetgray(NX_LTGRAY);	
-	NXRectFill(&bounds);			/* for the background */
-	PSsetgray(NX_DKGRAY);
+	[[NSColor lightGrayColor] set];
+	NSRectFill(dirtyRect);			/* for the background */
+	[[NSColor darkGrayColor] set];
 	PSWXYShow( firstX, firstY, charString, xyPositions, 2*popSize);
 	[popSizeField setIntValue:popSize];
 	/* free old stuff */
-	cfree(xyPositions);
-	cfree(charString);
+	free(xyPositions);
+	free(charString);
 	
 	/* Now for text drawing. We disable flush window, so that we can 
 	 * flush all at once. Otherwise it flickers a lot. 
@@ -97,26 +104,27 @@
 	[theAppButton display];
 	[theBox display];
 	[theTitle display]; 
-	[[[self window] reenableFlushWindow] flushWindow];
-	return self;
+	[[self window] enableFlushWindow];
+	[[self window] flushWindow];
 }
 
 /* disable mouse down drawing */
-- mouseDown:(NXEvent *)theEvent
+- (void)mouseDown:(NSEvent *)theEvent
 {
-	return self;
 }
 
 - window
 {
-	return window;
+	return [self window];
 }
 
-- free
+- (void)dealloc
 {
-	free(population);
-	[super free];
-	return self;
+	if (population) {
+		free(population);
+		population = NULL;
+	}
+	[super dealloc];
 }
 
 @end

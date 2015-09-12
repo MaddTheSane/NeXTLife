@@ -2,14 +2,11 @@
    NOTE: Do NOT change this file -- Project Builder maintains it.
 */
 
-#import <appkit/appkit.h>
+#import <AppKit/AppKit.h>
 
-void main(int argc, char *argv[]) {
-
-    [Application new];
-    if ([NXApp loadNibSection:"Life.nib" owner:NXApp withNames:NO])
-	    [NXApp run];
-	    
-    [NXApp free];
-    exit(0);
+int main(int argc, char *argv[]) {
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	int toRet = NSApplicationMain(argc, argv);
+	[pool release];
+	return toRet;
 }
