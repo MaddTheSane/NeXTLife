@@ -10,7 +10,6 @@
 		550FE1951B9CF704003F208D /* InfoPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 550FE1971B9CF704003F208D /* InfoPanel.xib */; };
 		550FE1981B9CF715003F208D /* Life.xib in Resources */ = {isa = PBXBuildFile; fileRef = 550FE19A1B9CF715003F208D /* Life.xib */; };
 		550FE19B1B9CF71F003F208D /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 550FE19D1B9CF71F003F208D /* Preferences.xib */; };
-		550FE19E1B9CF737003F208D /* Random.nib in Resources */ = {isa = PBXBuildFile; fileRef = 550FE1A01B9CF737003F208D /* Random.nib */; };
 		553141AF1B9A65DB00390795 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 553141AE1B9A65DB00390795 /* main.m */; };
 		553141B11B9A65DB00390795 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 553141B01B9A65DB00390795 /* Assets.xcassets */; };
 		553141C81B9A66AF00390795 /* Generator.m in Sources */ = {isa = PBXBuildFile; fileRef = 553141BC1B9A66AF00390795 /* Generator.m */; settings = {ASSET_TAGS = (); }; };
@@ -30,6 +29,7 @@
 		55E2F09F1B9B3EC9009B90C1 /* Info.life in Resources */ = {isa = PBXBuildFile; fileRef = 55E2F09D1B9B3EC9009B90C1 /* Info.life */; settings = {ASSET_TAGS = (); }; };
 		55E2F0A01B9B3EC9009B90C1 /* LifeSamples in Resources */ = {isa = PBXBuildFile; fileRef = 55E2F09E1B9B3EC9009B90C1 /* LifeSamples */; settings = {ASSET_TAGS = (); }; };
 		55E2F0A21B9B5239009B90C1 /* LifeChar.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E2F0A11B9B5239009B90C1 /* LifeChar.m */; settings = {ASSET_TAGS = (); }; };
+		55F6612C1BA3F13000599B8D /* Random.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55F6612A1BA3F13000599B8D /* Random.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -50,7 +50,6 @@
 		550FE1961B9CF704003F208D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/InfoPanel.xib; sourceTree = "<group>"; };
 		550FE1991B9CF715003F208D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Life.xib; sourceTree = "<group>"; };
 		550FE19C1B9CF71F003F208D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Preferences.xib; sourceTree = "<group>"; };
-		550FE19F1B9CF737003F208D /* en */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = en; path = en.lproj/Random.nib; sourceTree = "<group>"; };
 		553141A71B9A65DB00390795 /* NeXTLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeXTLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		553141AE1B9A65DB00390795 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		553141B01B9A65DB00390795 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,6 +81,7 @@
 		55E2F09E1B9B3EC9009B90C1 /* LifeSamples */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LifeSamples; sourceTree = "<group>"; };
 		55E2F0A11B9B5239009B90C1 /* LifeChar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LifeChar.m; sourceTree = "<group>"; };
 		55E2F0A31B9B5249009B90C1 /* LifeChar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LifeChar.h; sourceTree = "<group>"; };
+		55F6612B1BA3F13000599B8D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Random.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +143,7 @@
 				550FE1971B9CF704003F208D /* InfoPanel.xib */,
 				550FE19A1B9CF715003F208D /* Life.xib */,
 				550FE19D1B9CF71F003F208D /* Preferences.xib */,
-				550FE1A01B9CF737003F208D /* Random.nib */,
+				55F6612A1BA3F13000599B8D /* Random.xib */,
 				553141B51B9A65DB00390795 /* Info.plist */,
 				553141AD1B9A65DB00390795 /* Supporting Files */,
 			);
@@ -262,9 +262,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				55E2F0A01B9B3EC9009B90C1 /* LifeSamples in Resources */,
-				550FE19E1B9CF737003F208D /* Random.nib in Resources */,
 				55E2F09F1B9B3EC9009B90C1 /* Info.life in Resources */,
 				550FE1951B9CF704003F208D /* InfoPanel.xib in Resources */,
+				55F6612C1BA3F13000599B8D /* Random.xib in Resources */,
 				550FE19B1B9CF71F003F208D /* Preferences.xib in Resources */,
 				553141B11B9A65DB00390795 /* Assets.xcassets in Resources */,
 				553141D01B9A66BA00390795 /* Help in Resources */,
@@ -331,12 +331,12 @@
 			name = Preferences.xib;
 			sourceTree = "<group>";
 		};
-		550FE1A01B9CF737003F208D /* Random.nib */ = {
+		55F6612A1BA3F13000599B8D /* Random.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				550FE19F1B9CF737003F208D /* en */,
+				55F6612B1BA3F13000599B8D /* en */,
 			);
-			name = Random.nib;
+			name = Random.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -503,6 +503,7 @@
 				557A13721BA25E7E002C302C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

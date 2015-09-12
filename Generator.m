@@ -115,8 +115,6 @@ void swap( char *v[], int i, int j)
 		[runButton setState: YES];
 		[runMenuButton setTitle:@"Stop"];
 		/* the Timed entry calls the handler ... */
-		//+ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(nullable id)userInfo repeats:(BOOL)yesOrNo;
-
 		runningTE = [NSTimer scheduledTimerWithTimeInterval:speed target:self selector:@selector(go) userInfo:nil repeats:YES];
 		//runningTE = DPSAddTimedEntry(speed,&handler,
 		//			self,NX_BASETHRESHOLD);
