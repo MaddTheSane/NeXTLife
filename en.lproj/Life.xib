@@ -1,8 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
-        <development version="6300" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8187.4"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -25,12 +27,12 @@
                     <box toolTip="speed" title="Speed" id="9">
                         <rect key="frame" x="8" y="562" width="158" height="44"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <view key="contentView">
-                            <rect key="frame" x="2" y="2" width="154" height="26"/>
+                        <view key="contentView" id="62M-9p-fAj">
+                            <rect key="frame" x="2" y="2" width="154" height="27"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <slider verticalHuggingPriority="750" id="2">
-                                    <rect key="frame" x="21" y="5" width="107" height="16"/>
+                                    <rect key="frame" x="21" y="6" width="107" height="16"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <sliderCell key="cell" continuous="YES" alignment="left" maxValue="0.5" doubleValue="0.10000000149011612" tickMarkPosition="below" sliderType="linear" id="130">
                                         <font key="font" size="12" name="Helvetica"/>
@@ -41,15 +43,13 @@
                                 </slider>
                             </subviews>
                         </view>
-                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <font key="titleFont" size="12" name="Helvetica"/>
+                        <font key="titleFont" metaFont="smallSystem"/>
                     </box>
                     <box title="Generation" id="66">
                         <rect key="frame" x="200" y="562" width="92" height="44"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <view key="contentView">
-                            <rect key="frame" x="2" y="2" width="88" height="26"/>
+                        <view key="contentView" id="SiF-OE-7Ac">
+                            <rect key="frame" x="2" y="2" width="88" height="27"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textField verticalHuggingPriority="750" id="4">
@@ -63,20 +63,16 @@
                                 </textField>
                             </subviews>
                         </view>
-                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <font key="titleFont" size="12" name="Helvetica"/>
+                        <font key="titleFont" metaFont="smallSystem"/>
                     </box>
                     <box toolTip="zoom" title="Zoom" id="27">
                         <rect key="frame" x="8" y="514" width="160" height="44"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <view key="contentView">
-                            <rect key="frame" x="2" y="2" width="156" height="26"/>
+                        <view key="contentView" id="ZxE-wC-CTe">
+                            <rect key="frame" x="2" y="2" width="156" height="27"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </view>
-                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <font key="titleFont" size="12" name="Helvetica"/>
+                        <font key="titleFont" metaFont="smallSystem"/>
                     </box>
                     <button toolTip="runstop" id="34">
                         <rect key="frame" x="448" y="536" width="64" height="64"/>
@@ -92,8 +88,8 @@
                     <box title="Population" id="48">
                         <rect key="frame" x="200" y="514" width="92" height="44"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <view key="contentView">
-                            <rect key="frame" x="2" y="2" width="88" height="26"/>
+                        <view key="contentView" id="6mZ-cg-FEv">
+                            <rect key="frame" x="2" y="2" width="88" height="27"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textField verticalHuggingPriority="750" id="63">
@@ -107,9 +103,7 @@
                                 </textField>
                             </subviews>
                         </view>
-                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <font key="titleFont" size="12" name="Helvetica"/>
+                        <font key="titleFont" metaFont="smallSystem"/>
                     </box>
                     <slider toolTip="zoom" verticalHuggingPriority="750" id="22">
                         <rect key="frame" x="31" y="521" width="107" height="16"/>
@@ -152,7 +146,7 @@
                         <rect key="frame" x="8" y="8" width="502" height="499"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" autoresizesSubviews="NO" id="UJW-1t-85h">
-                            <rect key="frame" x="1" y="1" width="485" height="482"/>
+                            <rect key="frame" x="1" y="1" width="500" height="497"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <customView id="14" customClass="LifeView">
@@ -164,14 +158,13 @@
                                     </connections>
                                 </customView>
                             </subviews>
-                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </clipView>
                         <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="133">
-                            <rect key="frame" x="1" y="483" width="485" height="15"/>
+                            <rect key="frame" x="1" y="482" width="500" height="16"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="134">
-                            <rect key="frame" x="486" y="1" width="15" height="482"/>
+                            <rect key="frame" x="485" y="1" width="16" height="497"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>

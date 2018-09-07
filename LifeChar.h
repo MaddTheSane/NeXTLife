@@ -19,4 +19,4 @@ void PSWXYShow(float X, float Y, const char *charString, const float XYCoords[],
 void PSWDefineFont(const char *fontname, int size) DEPRECATED_ATTRIBUTE;
 void PSWMakeLineBind(float x, float y, float x1, float y1) DEPRECATED_ATTRIBUTE;
 void PSWStrokeLineBind(float LineWidth, float LineColor) DEPRECATED_ATTRIBUTE;
-void PSWDefs() DEPRECATED_ATTRIBUTE;
+void PSWDefs(void) DEPRECATED_ATTRIBUTE;
