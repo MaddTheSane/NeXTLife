@@ -16,7 +16,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>LSTypeIsPackage</key>
-			<integer>0</integer>
+			<false/>
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>

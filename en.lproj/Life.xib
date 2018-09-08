@@ -79,7 +79,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="bevel" title="Cell" bezelStyle="regularSquare" image="run" imagePosition="only" alignment="center" alternateImage="stop" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="123">
                             <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
-                            <font key="font" metaFont="cellTitle"/>
+                            <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
                             <action selector="runStop:" target="40" id="80"/>

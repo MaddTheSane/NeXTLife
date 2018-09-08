@@ -14,9 +14,9 @@
 
 @interface Generator: NSObject <NSApplicationDelegate>
 {
-    IBOutlet id		generationField;
+    IBOutlet NSTextField	*generationField;
     IBOutlet NSButton		*runButton;			//we need to change the icon
-    IBOutlet id		runMenuButton;		//we need to change title
+    IBOutlet NSMenuItem		*runMenuButton;		//we need to change title
 	IBOutlet NSTextField	*filenameField;
 	IBOutlet PrefController	*prefController;		//handles on prefcontroller
 	IBOutlet InfoGenerator		*infoGenerator;		//  and info controller

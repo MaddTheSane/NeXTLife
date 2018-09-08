@@ -184,7 +184,6 @@
 	free(charString);
 }
 
-/* display this population (gets called by generators...) */
 - (void)showPopulation:(char *)aPopulation
 						ofSize:(int)aSize 
 						andUniverse:(IntNXSize)aUniverse
@@ -207,15 +206,11 @@
 	[self resetFrame];
 }
 
-/* save as above with current universe */
 - (void)showPopulation:(char *)aPopulation ofSize:(int)aSize
 {
 	[self showPopulation:aPopulation ofSize:aSize andUniverse:universe];
 }
 
-/* this get the population from LiveView. Note that only LifeView keeps the
- * uptodate population. This gets called by save methods...
- */
 - (void)takePopulation:(char **)aPopulation andSize:(int *)aSize
 {
 	*aPopulation = population;
@@ -228,8 +223,8 @@
 	universe.width  = aUniverse.width;
 	universe.height = aUniverse.height;
 
-	[self setFrameSize:NSMakeSize((float)(FONT_SIZE*universe.width),
-								(float)(FONT_SIZE*universe.height)) ];
+	[self setFrameSize:NSMakeSize((CGFloat)(FONT_SIZE*universe.width),
+								  (CGFloat)(FONT_SIZE*universe.height)) ];
 	[self setBoundsSize:NSMakeSize(universe.width, universe.height)];
 	[self setBoundsOrigin:NSMakePoint(-0.5, -0.5)];
 }

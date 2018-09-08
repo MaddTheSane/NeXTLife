@@ -15,7 +15,7 @@
 @end
 
 
-static void swap( char *v[], int i, int j);
+static inline void swap( char *v[], int i, int j);
 
 /* a quick sort */
 static void qqsort(char *v[], int left, int right)
@@ -39,7 +39,7 @@ static void qqsort(char *v[], int left, int right)
 }
 
 /* the swap fot quick sort*/
-void swap( char *v[], int i, int j)
+static inline void swap( char *v[], int i, int j)
 {
 	char *temp;
 	
@@ -134,7 +134,7 @@ void swap( char *v[], int i, int j)
 	[lifeView calculate];
 	[lifeView display];
 	/* and remember to increment the generation number */
-	[generationField setIntValue:(++generation)];
+	[generationField setIntegerValue:(++generation)];
 }
 
 - (void)setFilename:(NSString *)aFilename
@@ -229,7 +229,7 @@ void swap( char *v[], int i, int j)
 	
 	fp = fopen([aFilename fileSystemRepresentation],"r");
 	if (fp==NULL) {
-		NSRunAlertPanel(0, @"Cannot open file: %s", 0, 0, 0, strerror(errno));
+		NSRunAlertPanel(@"Error", @"Cannot open file: %s", 0, 0, 0, strerror(errno));
 		return NO;
 	}
 	
@@ -260,7 +260,7 @@ void swap( char *v[], int i, int j)
 	}
 	fclose(fp);
 	generation = 0;
-	[generationField setIntValue:generation];
+	[generationField setIntegerValue:generation];
 	return retVal;
 }
 

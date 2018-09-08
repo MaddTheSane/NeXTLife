@@ -23,8 +23,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="271" height="193"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="30">
-                        <rect key="frame" x="181" y="13" width="76" height="32"/>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="30">
+                        <rect key="frame" x="182" y="13" width="75" height="32"/>
                         <buttonCell key="cell" type="push" title="Apply" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="64">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -48,8 +48,8 @@ DQ
                         </constraints>
                         <font key="titleFont" size="12" name="Helvetica"/>
                     </box>
-                    <popUpButton verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="33">
-                        <rect key="frame" x="90" y="149" width="92" height="26"/>
+                    <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="33">
+                        <rect key="frame" x="90" y="149" width="93" height="26"/>
                         <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="border" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" id="65">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="menu"/>
@@ -78,6 +78,7 @@ DQ
                 <constraints>
                     <constraint firstItem="20" firstAttribute="centerX" secondItem="39" secondAttribute="centerX" id="5yL-Ck-r3r"/>
                     <constraint firstItem="20" firstAttribute="top" secondItem="33" secondAttribute="bottom" constant="8" symbolic="YES" id="EIR-lS-tIc"/>
+                    <constraint firstItem="30" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="39" secondAttribute="leading" constant="20" symbolic="YES" id="Fyc-40-9cQ"/>
                     <constraint firstItem="30" firstAttribute="top" secondItem="20" secondAttribute="bottom" constant="20" symbolic="YES" id="Goy-2s-cu8"/>
                     <constraint firstAttribute="bottom" secondItem="30" secondAttribute="bottom" constant="20" symbolic="YES" id="GrJ-4A-W3E"/>
                     <constraint firstAttribute="trailing" secondItem="30" secondAttribute="trailing" constant="20" symbolic="YES" id="Uaj-ub-7Z5"/>

@@ -8,7 +8,7 @@
 @class LifeView;
 
 /// for the whichApply...
-typedef NS_ENUM(NSInteger, WhichDraw) {
+typedef NS_ENUM(NSInteger, RandomDraw) {
 	RandomDrawIsotropic = 0,
 	RandomDrawGaussian = 1,
 	RandomDrawStep = 2
@@ -34,7 +34,7 @@ typedef NS_ENUM(NSInteger, WhichDraw) {
 	char	*population;	//a population matrix
 	int	popSize;			//its size
 	IntNXSize	theUniverse;//an integer NXSize (for the universe)
-	WhichDraw	whichApply;			//A flag to set which drawing we need to do.
+	RandomDraw	whichApply;			//A flag to set which drawing we need to do.
 }
 ////The window that get displayed
 @property (weak) IBOutlet NSWindow *window;
