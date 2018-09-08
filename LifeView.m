@@ -49,10 +49,10 @@
 		/* set the life form symbol. */
 		theLifeChar = 'a' + [defaults integerForKey:@"LifeSymbol"];
 		
-		[self sizeTo:(float)(FONT_SIZE*universe.width)
-					:(float)(FONT_SIZE*universe.height) ];
-		[self setDrawSize:(float)universe.width :(float)universe.height];
-		[self setDrawOrigin:-0.5 :-0.5];
+		[self setFrameSize:NSMakeSize((float)(FONT_SIZE*universe.width),
+					(float)(FONT_SIZE*universe.height)) ];
+		[self setBoundsSize:NSMakeSize((float)universe.width, (float)universe.height)];
+		[self setBoundsOrigin:NSMakePoint(-0.5, -0.5)];
 	}
 	return self;
 }
@@ -68,10 +68,10 @@
 	NSRect	obounds = [self bounds];
 	[self convertRect:obounds toView:[self superview]];
 	
-	[self sizeTo:(float)(zoomSize*universe.width*FONT_SIZE)
-							:(float)(zoomSize*universe.height*FONT_SIZE)];
-	[self setDrawSize:(float)universe.width :(float)universe.height];
-	[self setDrawOrigin:-0.5 :-0.5];
+	[self setFrameSize:NSMakeSize((float)(zoomSize*universe.width*FONT_SIZE),
+							(float)(zoomSize*universe.height*FONT_SIZE))];
+	[self setBoundsSize:NSMakeSize((float)universe.width, (float)universe.height)];
+	[self setBoundsOrigin:NSMakePoint(-0.5, -0.5)];
 	[self convertRect:obounds fromView:[self superview]];
 	[self setNeedsDisplay:YES];
 }
@@ -228,12 +228,10 @@
 	universe.width  = aUniverse.width;
 	universe.height = aUniverse.height;
 
-	//self.fr
-	[self sizeTo:(float)(FONT_SIZE*universe.width) 	
-								:(float)(FONT_SIZE*universe.height) ];
+	[self setFrameSize:NSMakeSize((float)(FONT_SIZE*universe.width),
+								(float)(FONT_SIZE*universe.height)) ];
 	[self setBoundsSize:NSMakeSize(universe.width, universe.height)];
-	//[self setDrawSize:(float)universe.width :(float)universe.height];
-	[self setDrawOrigin:-0.5 :-0.5];
+	[self setBoundsOrigin:NSMakePoint(-0.5, -0.5)];
 }
 
 @synthesize zoom = zoomSize;
